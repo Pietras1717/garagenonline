@@ -27,6 +27,7 @@ function slider_plugin_menu()
     add_menu_page("Slider Garagenonline", "Slider - Home", "manage_options", "slides-option", "slides_option", "dashicons-embed-photo", 11);
     add_submenu_page("slides-option", "Ustawienia ogólne", "Ustawienia ogólne", "manage_options", "slides-option", "slides_option");
     add_submenu_page("slides-option", "Lista slajdów", "Lista slajdów", "manage_options", "slides-list", "show_slides_list");
+    add_submenu_page("slides-option", "Dodaj slajd", "Dodaj slajd", "manage_options", "add-slide", "add_new_slide");
 }
 
 add_action("admin_menu", "slider_plugin_menu");
@@ -39,6 +40,11 @@ function slides_option()
 function show_slides_list()
 {
     include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "slider-list.php");
+}
+
+function add_new_slide()
+{
+    include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "add-new-slide.php");
 }
 
 // Add basic styles and scripts

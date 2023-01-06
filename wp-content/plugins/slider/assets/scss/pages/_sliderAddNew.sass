@@ -1,0 +1,36 @@
+div.content
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 10px
+    input, textarea
+        flex-grow: 1
+        resize: none
+    div.data
+        width: 50%
+        border: 1px solid black
+        border-radius: 5px
+        padding: 0 10px 10px 10px
+    div.imgSection
+        width: 45%
+        border: 1px solid black
+        border-radius: 5px
+        padding: 0 10px 10px 10px
+        img
+            margin: 10px 0
+            max-width: 100%
+            border: 1px solid black
+            border-radius: 5px
+
+p.error
+    color: red
+
+@media screen and ( max-width: 600px )
+    div.content
+        flex-direction: column
+        div.data
+            width: 100%
+            margin: 10px 0
+        div.imgSection
+            width: 100%
+            margin: 10px 0
