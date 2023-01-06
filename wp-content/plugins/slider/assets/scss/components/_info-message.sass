@@ -1,0 +1,38 @@
+.info-message
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+    padding: 10px
+    border-radius: 5px
+    color: white
+    display: flex
+    align-items: center
+    justify-content: space-between
+    opacity: 1
+    transition: .3s
+    visibility: hidden
+    p
+        strong
+            &::first-letter
+                text-transform: uppercase
+    &.error
+        background: #f44336
+    &.success
+        background: #04AA6D
+    &.info
+        background: #2196F3
+    &.warrning
+        background: #ff9800
+    .closebtn
+        font-size: 20px
+        line-height: 20px
+        width: 30px
+        height: 30px
+        background: black
+        color: white
+        font-weight: bold
+        cursor: pointer
+        &:hover
+            background-color: white
+            color: black

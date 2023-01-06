@@ -44,9 +44,13 @@
             <div>
                 <div class="shortcode">
                     <input type="text" value="[do_shortcode]" readonly>
-                    <button class="plugin_save_changes">Kopiuj shortcode</button>
+                    <button id="copyShortcodeClipboard" class="plugin_save_changes">Kopiuj shortcode</button>
                 </div>
             </div>
+        </div>
+        <div class="info-message">
+            <p class="message"><strong>Info!</strong> Tutaj komunikat</p>
+            <button class="closebtn">X</button>
         </div>
     </div>
 </div>

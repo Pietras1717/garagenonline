@@ -21,6 +21,59 @@
 
 .plugin-body {
   margin: 10px 0;
+  position: relative;
+}
+
+.info-message {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  visibility: hidden;
+}
+.info-message p strong::first-letter {
+  text-transform: uppercase;
+}
+.info-message.error {
+  background: #f44336;
+}
+.info-message.success {
+  background: #04AA6D;
+}
+.info-message.info {
+  background: #2196F3;
+}
+.info-message.warrning {
+  background: #ff9800;
+}
+.info-message .closebtn {
+  font-size: 20px;
+  line-height: 20px;
+  width: 30px;
+  height: 30px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.info-message .closebtn:hover {
+  background-color: white;
+  color: black;
 }
 
 #frmSettings {
@@ -44,7 +97,7 @@
 }
 
 .left-column {
-  width: 55%;
+  width: 60%;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0 10px 10px 10px;
