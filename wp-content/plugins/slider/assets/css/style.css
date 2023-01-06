@@ -147,3 +147,16 @@ input:focus {
 .about-plugin div {
   margin: 10px 0;
 }
+
+@media screen and (max-width: 600px) {
+  #frmSettings {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #frmSettings .left-column, #frmSettings .right-column {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
