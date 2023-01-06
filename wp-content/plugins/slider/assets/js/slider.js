@@ -62,7 +62,8 @@ jQuery(document).ready(function () {
 
   //   Add upload image
 
-  jQuery("#sliderUploadImage").on("click", function () {
+  jQuery("#sliderUploadImage").on("click", function (e) {
+    e.preventDefault();
     let image = wp
       .media({
         title: "Wybierz zdjęcie dle nowego slajdu",
@@ -83,11 +84,18 @@ jQuery(document).ready(function () {
 
   jQuery("#frmNewSlide").submit(function () {
     const heading = jQuery('input[id="heading"]').val();
-    const content = jQuery('input[id="content"]').val();
-    const imgSrc = jQuery('.imgSection > img"]').attr("data-img");
+    const content = jQuery('textarea[id="content"]').val();
+    const imgSrc = jQuery(".imgSection > img").attr("data-img");
     let validationResult = formValidation(heading, content, imgSrc);
+    console.log(validationResult);
     if (validationResult) {
-      showMessageAlert("warning", "Formularz dodawania slajdu zawiera błędy");
+      jQuery(".error.heading").text(validationResult.heading);
+      jQuery(".error.content").text(validationResult.content);
+      jQuery(".error.image").text(validationResult.imgSrc);
+    } else {
+      jQuery(".error.heading").text("");
+      jQuery(".error.content").text("");
+      jQuery(".error.image").text("");
     }
   });
 });
@@ -124,12 +132,12 @@ function formValidation(heading, content, imgSrc) {
     imgSrc: "",
   };
   let error = false;
-  if (sizeof(heading) <= 3) {
+  if (heading.length <= 3) {
     messages.heading = "Nagłówek slajdu musi mieć min 3 znaki";
     error = true;
   }
-  if (sizeof(content) <= 10) {
-    messages.content = "Content slajdu musi mieć min 3 znaki";
+  if (content.length <= 10) {
+    messages.content = "Content slajdu musi mieć min 10 znaków";
     error = true;
   }
   if (imgSrc == "") {

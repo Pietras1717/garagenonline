@@ -14,7 +14,7 @@
                     <p class="error heading"></p>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="" cols="30" rows="10"></textarea>
+                        <textarea name="content" id="content" cols="30" rows="10"></textarea>
                     </div>
                     <p class="error content"></p>
                 </div>
@@ -26,5 +26,9 @@
             </div>
             <input type="submit" class="plugin_save_changes" value="Dodaj slajd">
         </form>
+        <div class="info-message">
+            <p class="message"><strong>Info!</strong> Tutaj komunikat</p>
+            <button class="closebtn">X</button>
+        </div>
     </div>
 </div>
