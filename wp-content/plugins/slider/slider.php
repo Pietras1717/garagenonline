@@ -56,3 +56,51 @@ function slider_ajax_handler()
 {
     print_r($_REQUEST);
 }
+
+// Register activation plugin HOOK
+
+function slider_generate_database_tables()
+{
+    $optionsQuery = "CREATE TABLE " . returnTableName("slider_options") . " (
+        `id` int NOT NULL AUTO_INCREMENT,
+        `option_name` text,
+        `option_value` text,
+        PRIMARY KEY (`id`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
+       ";
+    $sliderTablesQuery = "CREATE TABLE " . returnTableName("slider_tables") . " (
+        `id` int NOT NULL AUTO_INCREMENT,
+        `heading` text,
+        `description` text,
+        `imagePath` varchar(255),
+        `insertedAt` timestamp DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
+       ";
+    global $wpdb;
+    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+    dbDelta([$optionsQuery, $sliderTablesQuery]);
+}
+
+register_activation_hook(__FILE__, "slider_generate_database_tables");
+
+// Register deactivation plugin HOOKS
+
+function slider_drop_database_tables()
+{
+    global $wpdb;
+    $args = [returnTableName("slider_options"), returnTableName("slider_tables")];
+    foreach ($args as $singleArg) {
+        $wpdb->query("DROP TABLE IF EXISTS " . $singleArg);
+    }
+}
+
+register_deactivation_hook(__FILE__, "slider_drop_database_tables");
+
+// Function to return table names with prefix
+
+function returnTableName(string $name)
+{
+    global $wpdb;
+    return $wpdb->prefix . $name;
+}
