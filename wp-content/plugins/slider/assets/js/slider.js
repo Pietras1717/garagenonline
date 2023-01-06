@@ -72,8 +72,23 @@ jQuery(document).ready(function () {
       .on("select", function () {
         let uploadedImage = image.state().get("selection").first();
         let getImage = uploadedImage.toJSON().url;
-        jQuery(".imgSection > img").attr("src", getImage);
+        jQuery(".imgSection > img").attr({
+          src: getImage,
+          "data-img": getImage,
+        });
       });
+  });
+
+  //   Send new slide data with ajax
+
+  jQuery("#frmNewSlide").submit(function () {
+    const heading = jQuery('input[id="heading"]').val();
+    const content = jQuery('input[id="content"]').val();
+    const imgSrc = jQuery('.imgSection > img"]').attr("data-img");
+    let validationResult = formValidation(heading, content, imgSrc);
+    if (validationResult) {
+      showMessageAlert("warning", "Formularz dodawania slajdu zawiera błędy");
+    }
   });
 });
 
@@ -100,4 +115,28 @@ function showMessageAlert(className = "info", html = "") {
       .html("");
     location.reload();
   }, 5000);
+}
+
+function formValidation(heading, content, imgSrc) {
+  let messages = {
+    heading: "",
+    content: "",
+    imgSrc: "",
+  };
+  let error = false;
+  if (sizeof(heading) <= 3) {
+    messages.heading = "Nagłówek slajdu musi mieć min 3 znaki";
+    error = true;
+  }
+  if (sizeof(content) <= 10) {
+    messages.content = "Content slajdu musi mieć min 3 znaki";
+    error = true;
+  }
+  if (imgSrc == "") {
+    messages.imgSrc = "Obrazek musi być dodany";
+    error = true;
+  }
+
+  if (error) return messages;
+  return error;
 }

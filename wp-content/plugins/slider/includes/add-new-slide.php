@@ -11,16 +11,16 @@
                         <label for="heading">Nagłówek</label>
                         <input type="text" name="heading" id="heading">
                     </div>
-                    <p class="error heading">Tutaj będzie błąd jak wystąpi</p>
+                    <p class="error heading"></p>
                     <div class="form-group">
                         <label for="content">Content</label>
                         <textarea name="content" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <p class="error content">Tutaj będzie błąd jak wystąpi</p>
+                    <p class="error content"></p>
                 </div>
                 <div class="imgSection">
-                    <img src="<?php echo SLIDER_PLUGIN_URL . "/assets/img/previewImage.png" ?>" alt="">
-                    <p class="error image">Tutaj będzie błąd jak wystąpi</p>
+                    <img src="<?php echo SLIDER_PLUGIN_URL . "/assets/img/previewImage.png" ?>" alt="" data-img="">
+                    <p class="error image"></p>
                     <button class="plugin_save_changes" id="sliderUploadImage">Dodaj zdjęcie</button>
                 </div>
             </div>
