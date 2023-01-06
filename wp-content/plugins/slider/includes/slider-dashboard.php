@@ -41,7 +41,7 @@ global $wpdb;
                         ), ARRAY_A);
                         ?>
                         <label for="sliderDuration">Czas trwania przejścia</label>
-                        <input class="optionsInput" name="sliderDuration" type="number" value="<?php echo  $sliderDuration["option_value"] == "" ? "1000" :  $sliderDuration["option_value"] ?>" step="1000" min="1000" max="15000">
+                        <input class="optionsInput" name="sliderDuration" type="number" value="<?php echo  !$sliderDuration ? 1000 : $sliderDuration["option_value"] ?>" step="1000" min="1000" max="15000">
                     </div>
                 </div>
             </div>
@@ -72,3 +72,6 @@ global $wpdb;
         </div>
     </div>
 </div>
+<?php
+$wpdb->flush();
+?>

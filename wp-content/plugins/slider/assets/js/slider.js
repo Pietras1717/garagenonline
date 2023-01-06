@@ -89,13 +89,38 @@ jQuery(document).ready(function () {
     let validationResult = formValidation(heading, content, imgSrc);
     console.log(validationResult);
     if (validationResult) {
+      // pokazanie errorów
       jQuery(".error.heading").text(validationResult.heading);
       jQuery(".error.content").text(validationResult.content);
       jQuery(".error.image").text(validationResult.imgSrc);
     } else {
+      // czyszczenie errorów
       jQuery(".error.heading").text("");
       jQuery(".error.content").text("");
       jQuery(".error.image").text("");
+
+      //   obsługa ajax
+      jQuery.ajax({
+        url: ajax,
+        data: {
+          action: "slider",
+          requestParam: "add-new-slide",
+          heading: heading,
+          content: content,
+          imgSrc: imgSrc,
+        },
+        success: function () {
+          // Show confirmation allert
+          showMessageAlert("success", "Nowy slajd został pomyślnie dodany");
+        },
+        error: function () {
+          // Show confirmation allert
+          showMessageAlert(
+            "error",
+            "Wystąpił błąd podczas dodawnia nowego slajdu. Spróbuj ponownie!"
+          );
+        },
+      });
     }
   });
 });

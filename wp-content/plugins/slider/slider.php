@@ -91,7 +91,15 @@ function slider_ajax_handler()
                     }
                 }
             }
+            $wpdb->flush();
         case "add-new-slide":
+            $wpdb->insert(returnTableName("slider_tables"), array(
+                "heading" => $_REQUEST["heading"],
+                "description" => $_REQUEST["content"],
+                "imagePath" => $_REQUEST["imgSrc"],
+                "isActive" => false
+            ));
+            $wpdb->flush();
     }
 }
 
@@ -111,7 +119,7 @@ function slider_generate_database_tables()
         `heading` text,
         `description` text,
         `imagePath` varchar(255),
-        `isactive` boolean,
+        `isactive` BOOLEAN,
         `insertedAt` timestamp DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)
        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
