@@ -123,6 +123,34 @@ jQuery(document).ready(function () {
       });
     }
   });
+
+  //   Delete slide with ajax
+  jQuery("#deleteSlide").on("click", function () {
+    let id = jQuery(this).attr("data-id");
+    //   obsługa ajax
+    jQuery.ajax({
+      url: ajax,
+      data: {
+        action: "slider",
+        requestParam: "delete-slide",
+        id: id,
+      },
+      success: function () {
+        // Show confirmation allert
+        showMessageAlert(
+          "success",
+          "Slajd #" + id + " został pomyślnie usunięty!"
+        );
+      },
+      error: function () {
+        // Show confirmation allert
+        showMessageAlert(
+          "error",
+          "Wystąpił błąd podczas usuwania slajdu. Spróbuj ponownie!"
+        );
+      },
+    });
+  });
 });
 
 function showMessageAlert(className = "info", html = "") {

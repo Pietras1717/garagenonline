@@ -27,12 +27,12 @@ $getSlides = $wpdb->get_results("SELECT * from " . returnTableName('slider_table
                             <td><img src="<?php echo $row['imagePath'] ?>" alt="" width="160px" height="90px"></td>
                             <td><?php echo $row['heading'] ?></td>
                             <td><?php echo $row['description'] ?></td>
-                            <td><?php echo $row['isactive'] == "1" ? "tak" : "nie" ?></td>
+                            <td><span class="slider <?php echo $row['isactive'] == "1" ? "slideactive" : "slidenotactive" ?>"><?php echo $row['isactive'] == "1" ? "tak" : "nie" ?></span></td>
                             <td><?php echo $row['insertedAt'] ?></td>
                             <td>
                                 <div class="flexrow">
                                     <a class="plugin_save_changes" href="<?php echo admin_url("admin.php?page=edit-slide&slideid=" . $row['id']) ?>">Edytuj</a>
-                                    <button class="plugin_save_change deleteSlide">Usuń</button>
+                                    <button id="deleteSlide" data-id="<?php echo $row['id'] ?>" class="plugin_save_change deleteSlide">Usuń</button>
                                 </div>
                             </td>
                         </tr>

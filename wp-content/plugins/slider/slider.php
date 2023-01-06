@@ -100,6 +100,9 @@ function slider_ajax_handler()
                 "isActive" => false
             ));
             $wpdb->flush();
+        case "delete-slide":
+            $wpdb->delete(returnTableName("slider_tables"), array("id" => $_REQUEST["id"]));
+            $wpdb->flush();
     }
 }
 
