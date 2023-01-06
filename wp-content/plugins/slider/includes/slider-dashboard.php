@@ -38,6 +38,10 @@
                 <span>Plugin version:</span><span>1.0</span>
             </div>
             <div>
+                <h3>Plugin author</h3>
+                <span>Piotr Rysz</span>
+            </div>
+            <div>
                 <div class="shortcode">
                     <input type="text" value="[do_shortcode]" readonly>
                     <button class="plugin_save_changes">Kopiuj shortcode</button>
