@@ -1,3 +1,4 @@
+<?php wp_enqueue_media() ?>
 <div class="plugin-wrapper">
     <div class="plugin-heading">
         <h1>Slider - Add new slide</h1>

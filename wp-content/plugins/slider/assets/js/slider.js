@@ -59,6 +59,22 @@ jQuery(document).ready(function () {
   //   Adding dataTable support
 
   jQuery("#sliderList").DataTable();
+
+  //   Add upload image
+
+  jQuery("#sliderUploadImage").on("click", function () {
+    let image = wp
+      .media({
+        title: "Wybierz zdjęcie dle nowego slajdu",
+        multiple: false,
+      })
+      .open()
+      .on("select", function () {
+        let uploadedImage = image.state().get("selection").first();
+        let getImage = uploadedImage.toJSON().url;
+        jQuery(".imgSection > img").attr("src", getImage);
+      });
+  });
 });
 
 function showMessageAlert(className = "info", html = "") {
