@@ -196,11 +196,11 @@ span.slider.slidenotactive {
           justify-content: row;
 }
 
-.plugin_save_change.delteSlide {
+.plugin_save_changes.delteSlide {
   margin-left: 5px;
   background: #cf0909;
 }
-.plugin_save_change.delteSlide:hover {
+.plugin_save_changes.delteSlide:hover {
   background: #d01a1a;
 }
 

@@ -97,7 +97,7 @@ function slider_ajax_handler()
                 "heading" => $_REQUEST["heading"],
                 "description" => $_REQUEST["content"],
                 "imagePath" => $_REQUEST["imgSrc"],
-                "isActive" => false
+                "isActive" => true
             ));
             $wpdb->flush();
         case "delete-slide":
