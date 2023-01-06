@@ -1,3 +1,6 @@
+<?php
+global $wpdb;
+?>
 <div class="plugin-wrapper">
     <div class="plugin-heading">
         <h1>Slider - Dashboard</h1>
@@ -8,22 +11,37 @@
                 <h3>Basic Settings</h3>
                 <div class="form-inputs">
                     <div class="form-group">
+                        <?php
+                        $sliderActive = $wpdb->get_row($wpdb->prepare(
+                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='sliderActive'"
+                        ), ARRAY_A);
+                        ?>
                         <label for="sliderActive">Aktywacja slidera</label>
-                        <input class="optionsInput" name="sliderActive" type="checkbox">
+                        <input class="optionsInput" name="sliderActive" type="checkbox" checked="<?php echo  $sliderActive["option_value"] ?>">
                     </div>
                     <div class="form-group">
+                        <?php
+                        $sliderCount = $wpdb->get_row($wpdb->prepare(
+                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='numberSlides'"
+                        ), ARRAY_A);
+                        ?>
                         <label for="sliderCount">Maksymalna liczba slajdów</label>
                         <select class="optionsInput" name="sliderCount">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option <?php echo $sliderCount["option_value"] == 1 ? "selected" : "" ?> value="1">1</option>
+                            <option <?php echo $sliderCount["option_value"] == 2  ? "selected" : "" ?> value="2">2</option>
+                            <option <?php echo $sliderCount["option_value"] == 3  ? "selected" : "" ?> value="3">3</option>
+                            <option <?php echo $sliderCount["option_value"] == 4  ? "selected" : "" ?> value="4">4</option>
+                            <option <?php echo $sliderCount["option_value"] == 5  ? "selected" : "" ?> value="5">5</option>
                         </select>
                     </div>
                     <div class="form-group">
+                        <?php
+                        $sliderDuration = $wpdb->get_row($wpdb->prepare(
+                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='sliderDuration'"
+                        ), ARRAY_A);
+                        ?>
                         <label for="sliderDuration">Czas trwania przejścia</label>
-                        <input class="optionsInput" name="sliderDuration" type="number" value="1000" step="1000" min="1000" max="15000">
+                        <input class="optionsInput" name="sliderDuration" type="number" value="<?php echo  $sliderDuration["option_value"] ?>" step="1000" min="1000" max="15000">
                     </div>
                 </div>
             </div>
