@@ -5,6 +5,7 @@ jQuery(document).ready(function () {
       visibility: "hidden",
       opacity: 0,
     });
+    location.reload();
   });
 
   //   Shortcode copy to clipboard
@@ -77,5 +78,6 @@ function showMessageAlert(className = "info", html = "") {
       .removeClass(className)
       .find("p")
       .html("");
+    location.reload();
   }, 5000);
 }

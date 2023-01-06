@@ -17,12 +17,12 @@ global $wpdb;
                         ), ARRAY_A);
                         ?>
                         <label for="sliderActive">Aktywacja slidera</label>
-                        <input class="optionsInput" name="sliderActive" type="checkbox" checked="<?php echo  $sliderActive["option_value"] ?>">
+                        <input class="optionsInput" name="sliderActive" type="checkbox" <?php echo  $sliderActive["option_value"] == "true" ? "checked" : ""  ?>>
                     </div>
                     <div class="form-group">
                         <?php
                         $sliderCount = $wpdb->get_row($wpdb->prepare(
-                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='numberSlides'"
+                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='sliderCount'"
                         ), ARRAY_A);
                         ?>
                         <label for="sliderCount">Maksymalna liczba slajdów</label>
