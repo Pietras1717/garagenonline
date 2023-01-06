@@ -1,0 +1,32 @@
+AddType application/x-httpd-php80 .php
+#AUTORYZACJA HASŁEM
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /usr/home/Pietras17/domains/pietras17.ct8.pl/public_html/.htpasswd
+Require valid-user
+#blokada przed przeglądaniem katalogów
+Options -Indexes
+###################################################################################
+RewriteEngine On
+#przekierowania na SSL
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{HTTPS}  off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+# BEGIN WordPress
+# Dyrektywy zawarte między "BEGIN WordPress" oraz "END WordPress"
+# są generowane dynamicznie i powinny być modyfikowane tylko za pomocą
+# filtrów WordPressa. Zmiany dokonane bezpośrednio tutaj będą nadpisywane.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
