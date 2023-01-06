@@ -9,11 +9,11 @@
                 <div class="form-inputs">
                     <div class="form-group">
                         <label for="sliderActive">Aktywacja slidera</label>
-                        <input name="sliderActive" type="checkbox">
+                        <input class="optionsInput" name="sliderActive" type="checkbox">
                     </div>
                     <div class="form-group">
                         <label for="sliderCount">Maksymalna liczba slajdów</label>
-                        <select name="sliderCount">
+                        <select class="optionsInput" name="sliderCount">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="sliderDuration">Czas trwania przejścia</label>
-                        <input name="sliderDuration" type="number" value="1000" step="1000" min="1000" max="15000">
+                        <input class="optionsInput" name="sliderDuration" type="number" value="1000" step="1000" min="1000" max="15000">
                     </div>
                 </div>
             </div>
