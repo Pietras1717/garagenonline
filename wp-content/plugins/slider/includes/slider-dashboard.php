@@ -33,8 +33,16 @@
             </div>
         </form>
         <div class="about-plugin">
-            <h3>Plugin information</h3>
-            <span>Plugin version:</span><span>1.0</span>
+            <div>
+                <h3>Plugin information</h3>
+                <span>Plugin version:</span><span>1.0</span>
+            </div>
+            <div>
+                <div class="shortcode">
+                    <input type="text" value="[do_shortcode]" readonly>
+                    <button class="plugin_save_changes">Kopiuj shortcode</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
