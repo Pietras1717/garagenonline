@@ -6,5 +6,82 @@
 }
 
 .plugin-wrapper {
-  padding: 20px;
+  margin: 20px;
+}
+
+.plugin-heading {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.plugin-heading h1 {
+  color: white;
+}
+
+.plugin-body {
+  margin: 10px 0;
+}
+
+#frmSettings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-plugin {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+  margin: 10px 0;
+}
+
+.left-column {
+  width: 55%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+}
+
+.right-column {
+  width: 35%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+}
+
+.form-group {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-group > * {
+  margin-right: 10px;
+}
+
+.plugin_save_changes {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+.plugin_save_changes:hover {
+  background-color: white;
+  color: black;
 }
