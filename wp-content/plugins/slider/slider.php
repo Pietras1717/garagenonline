@@ -54,7 +54,30 @@ add_action("wp_ajax_slider", "slider_ajax_handler");
 
 function slider_ajax_handler()
 {
-    print_r($_REQUEST);
+    global $wpdb;
+    switch ($_REQUEST['requestParam']) {
+        case "save-settings":
+            foreach ($_REQUEST as $params => $value) {
+                if ($params !== "requestParam" && $params !== "action") {
+                    $selectQuery = $wpdb->get_results($wpdb->prepare(
+                        "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='" . $params . "'"
+                    ));
+
+                    // Inset or update records in slider options database
+
+                    if (count($selectQuery) == 0) {
+                        $wpdb->insert(returnTableName("slider_options"), array(
+                            "option_name" => $params,
+                            "option_value" => $_REQUEST[$params]
+                        ));
+                    } else {
+                        $wpdb->update(returnTableName("slider_options"), array(
+                            "option_value" => $_REQUEST[$params]
+                        ), array("option_name" => $params));
+                    }
+                }
+            }
+    }
 }
 
 // Register activation plugin HOOK

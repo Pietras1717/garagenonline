@@ -26,6 +26,7 @@ jQuery(document).ready(function () {
     const inputs = [...jQuery(this).find("input, select")];
     let postData = {
       action: "slider",
+      requestParam: "save-settings",
     };
     inputs.forEach((input) => {
       let name = input["name"];
@@ -43,8 +44,13 @@ jQuery(document).ready(function () {
     jQuery.ajax({
       url: ajax,
       data: postData,
-      success: function (data) {
-        console.log(data);
+      success: function () {
+        // Show confirmation allert
+        showMessageAlert("success", "Ustawienia pomyślnie zaktualizowane");
+      },
+      error: function () {
+        // Show confirmation allert
+        showMessageAlert("error", "Wystąpił błąd podczas zapisywania");
       },
     });
   });
