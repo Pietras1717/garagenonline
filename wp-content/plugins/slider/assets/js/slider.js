@@ -20,6 +20,34 @@ jQuery(document).ready(function () {
     // Show confirmation allert
     showMessageAlert("info", "Shortcode został skopiowany do schowka");
   });
+
+  // Send options settings with ajax
+  jQuery("#frmSettings").submit(function () {
+    const inputs = [...jQuery(this).find("input, select")];
+    let postData = {
+      action: "slider",
+    };
+    inputs.forEach((input) => {
+      let name = input["name"];
+      let type = input["type"];
+      let value;
+      if (type === "checkbox") {
+        let checked = jQuery(input).is(":checked");
+        value = checked;
+      } else {
+        value = input["value"];
+      }
+      postData[name] = value;
+    });
+
+    jQuery.ajax({
+      url: ajax,
+      data: postData,
+      success: function (data) {
+        console.log(data);
+      },
+    });
+  });
 });
 
 function showMessageAlert(className = "info", html = "") {

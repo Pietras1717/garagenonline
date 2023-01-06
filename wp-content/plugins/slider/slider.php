@@ -44,6 +44,15 @@ function add_styles_and_script()
     // scripts
     wp_enqueue_script("jquery", SLIDER_PLUGIN_URL . '/assets/js/jquery.min.js');
     wp_enqueue_script("script", SLIDER_PLUGIN_URL . '/assets/js/slider.js');
+    wp_localize_script('script', 'ajax', admin_url("admin-ajax.php"));
 }
 
 add_action("init", "add_styles_and_script");
+
+// Add ajax action
+add_action("wp_ajax_slider", "slider_ajax_handler");
+
+function slider_ajax_handler()
+{
+    print_r($_REQUEST);
+}
