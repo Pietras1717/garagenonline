@@ -55,6 +55,10 @@ jQuery(document).ready(function () {
       },
     });
   });
+
+  //   Adding dataTable support
+
+  jQuery("#sliderList").DataTable();
 });
 
 function showMessageAlert(className = "info", html = "") {
