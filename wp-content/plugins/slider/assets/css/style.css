@@ -196,11 +196,19 @@ span.slider.slidenotactive {
           justify-content: row;
 }
 
-.plugin_save_changes.delteSlide {
+.plugin_delete_slide {
   margin-left: 5px;
   background: #cf0909;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  font-weight: bold;
+  cursor: pointer;
 }
-.plugin_save_changes.delteSlide:hover {
+.plugin_delete_slide:hover {
   background: #d01a1a;
 }
 
