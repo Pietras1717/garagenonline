@@ -40,6 +40,10 @@ $getSlides = $wpdb->get_results("SELECT * from " . returnTableName('slider_table
                 </tbody>
             </table>
         </div>
+        <div class="info-message">
+            <p class="message"><strong>Info!</strong> Tutaj komunikat</p>
+            <button class="closebtn">X</button>
+        </div>
     </div>
 </div>
 <?php
