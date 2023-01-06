@@ -32,7 +32,7 @@ $getSlides = $wpdb->get_results("SELECT * from " . returnTableName('slider_table
                             <td>
                                 <div class="flexrow">
                                     <a class="plugin_save_changes" href="<?php echo admin_url("admin.php?page=edit-slide&slideid=" . $row['id']) ?>">Edytuj</a>
-                                    <button id="deleteSlide" data-id="<?php echo $row['id'] ?>" class="plugin_save_change deleteSlide">Usuń</button>
+                                    <button id="deleteSlide" data-id="<?php echo $row['id'] ?>" class="plugin_save_changes deleteSlide">Usuń</button>
                                 </div>
                             </td>
                         </tr>

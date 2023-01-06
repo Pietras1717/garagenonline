@@ -175,14 +175,15 @@ div.table {
   min-width: 45px;
 }
 
-span.slider {
+span.slider.slideactive {
   color: white;
   padding: 2px 5px;
-}
-span.slider .slideactive {
   background: green;
 }
-span.slider .slidenotactive {
+
+span.slider.slidenotactive {
+  color: white;
+  padding: 2px 5px;
   background: red;
 }
 
@@ -195,11 +196,11 @@ span.slider .slidenotactive {
           justify-content: row;
 }
 
-.plugin_save_change #deleteSlide {
+.plugin_save_change.delteSlide {
   margin-left: 5px;
   background: #cf0909;
 }
-.plugin_save_change #deleteSlide:hover {
+.plugin_save_change.delteSlide:hover {
   background: #d01a1a;
 }
 
