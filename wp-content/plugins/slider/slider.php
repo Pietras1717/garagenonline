@@ -91,6 +91,7 @@ function slider_ajax_handler()
                     }
                 }
             }
+        case "add-new-slide":
     }
 }
 
@@ -110,6 +111,7 @@ function slider_generate_database_tables()
         `heading` text,
         `description` text,
         `imagePath` varchar(255),
+        `isactive` boolean,
         `insertedAt` timestamp DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)
        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
