@@ -42,7 +42,7 @@ function add_styles_and_script()
     // styles
     wp_enqueue_style("style", SLIDER_PLUGIN_URL . '/assets/css/style.css');
     // scripts
-    wp_enqueue_script("script", SLIDER_PLUGIN_URL . '/assets/js/slider-script.js');
+    wp_enqueue_script("script", SLIDER_PLUGIN_URL . '/assets/js/slider.js');
 }
 
 add_action("init", "add_styles_and_script");
