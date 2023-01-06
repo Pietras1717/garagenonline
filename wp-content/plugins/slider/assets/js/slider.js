@@ -62,6 +62,7 @@ function showMessageAlert(className = "info", html = "") {
       visibility: "visible",
       opacity: 1,
     })
+    .attr("class", ".info-message")
     .addClass(className)
     .find("p")
     .html("<strong>" + className + "!</strong> " + html);
