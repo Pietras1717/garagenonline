@@ -43,6 +43,15 @@ global $wpdb;
                         <label for="sliderDuration">Czas trwania przejścia</label>
                         <input class="optionsInput" name="sliderDuration" type="number" value="<?php echo  !$sliderDuration ? 1000 : $sliderDuration["option_value"] ?>" step="1000" min="1000" max="15000">
                     </div>
+                    <div class="form-group">
+                        <?php
+                        $sliderBlockColor = $wpdb->get_row($wpdb->prepare(
+                            "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='blockColor'"
+                        ), ARRAY_A);
+                        ?>
+                        <label for="blockColor">Czas trwania przejścia</label>
+                        <input class="optionsInput" name="blockColor" type="color" value="<?php echo  !$sliderDuration ? "#000000" : $sliderBlockColor["option_value"] ?>">
+                    </div>
                 </div>
             </div>
             <div class="right-column">
