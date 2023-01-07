@@ -1,6 +1,6 @@
 <?php
 get_header();
-// do_shortcode("[display_slider]");
+do_shortcode("[display_slider]");
 ?>
 
 <?php
