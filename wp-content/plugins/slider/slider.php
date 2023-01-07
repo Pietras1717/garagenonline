@@ -98,6 +98,7 @@ function slider_ajax_handler()
                 }
             }
             $wpdb->flush();
+            break;
         case "add-new-slide":
             $wpdb->insert(returnTableName("slider_tables"), array(
                 "heading" => $_REQUEST["heading"],
@@ -106,17 +107,19 @@ function slider_ajax_handler()
                 "isActive" => true
             ));
             $wpdb->flush();
+            break;
         case "delete-slide":
             $wpdb->delete(returnTableName("slider_tables"), array("id" => $_REQUEST["id"]));
             $wpdb->flush();
+            break;
         case "edit-slide":
-            $wpdb->update("hfg_slider_tables", array(
+            $wpdb->update(returnTableName("slider_tables"), array(
                 "heading" => $_REQUEST["heading"],
                 "description" => $_REQUEST["content"],
                 "imagePath" => $_REQUEST["imgSrc"],
                 "isactive" => $_REQUEST["checked"],
             ), array("id" => $_REQUEST["slideid"]));
-            print_r($_REQUEST);
+            break;
     }
 }
 
