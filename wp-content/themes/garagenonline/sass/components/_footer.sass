@@ -1,0 +1,88 @@
+footer
+    background-color: rgba(0,0,0,1 )
+    padding: 40px
+    color: $txtFooter
+    @media screen and ( max-width: 500px )
+        padding: 20px
+    .footer-wrapper
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        @media screen and ( max-width: 1024px )
+            flex-wrap: wrap
+            &::after
+                content: ""
+                flex: auto
+        .footer-column
+            flex-basis: 13%
+            @media screen and ( max-width: 1024px )
+                margin-bottom: 20px
+                flex-basis: 25%
+            @media screen and ( max-width: 500px )
+                flex-basis: 50%
+            &.first
+                flex-basis: 25%
+                @media screen and ( max-width: 1024px )
+                    flex-basis: 35%
+                @media screen and ( max-width: 771px )
+                    flex-basis: 100%
+            &.last
+                flex-basis: 25%
+                @media screen and ( max-width: 1024px )
+                    flex-basis: 35%
+                    align-self: flex-start
+                @media screen and ( max-width: 771px )
+                    flex-basis: 100%
+            img.logo
+                width: 100%
+                max-width: 200px
+            h3
+                color: white
+                margin-bottom: 15px
+                font-size: 16px
+                font-weight: 600
+            p
+                font-size: 14px
+                line-height: 25px
+            span
+                font-size: 14px
+                line-height: 20px
+            i
+                color: $baseColor
+                margin-right: 5px
+            nav
+                ul
+                    list-style: none
+                    li
+                        margin-bottom: 5px
+                        a
+                            text-decoration: none
+                            font-size: 14px
+                            padding: 5px 0
+                            color: $txtFooter
+                            &::before
+                                content: "🠚"
+                            &:hover
+                                color: $baseColor
+            .single-information
+                margin-bottom: 5px
+                a
+                    text-decoration: none
+                    font-size: 14px
+                    color: $txtFooter
+                    &:hover
+                        color: $baseColor
+
+.copyright
+    background-color: black
+    border-top: 1px solid #3e3e3e
+    padding: 10px 40px
+    @media screen and ( max-width: 500px )
+        padding: 10px 20px
+    .copyright-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        p
+            color: $txtFooter
+            font-size: 13px
