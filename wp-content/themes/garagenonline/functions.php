@@ -153,7 +153,7 @@ function arphabet_widgets_init()
     ));
     register_sidebar(array(
         'name'          => 'Stopka - kolumna 5',
-        'id'            => 'footer_col_4',
+        'id'            => 'footer_col_5',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
