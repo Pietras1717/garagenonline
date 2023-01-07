@@ -27,7 +27,13 @@
                     </div>
                 <?php $i++;
                 endforeach ?>
-
+                <div class="dots">
+                    <?php foreach ($getSlides as $slide) : ?>
+                        <div class="single-dot <?php echo  $i == 1 ? "active" : "" ?>">
+                        </div>
+                    <?php $i++;
+                    endforeach ?>
+                </div>
             </section>
 
     <?php endif;
