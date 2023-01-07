@@ -1,4 +1,26 @@
 <?php
+// Dodanie Options Page
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title'     => 'Ustawienia szablonu',
+        'menu_title'    => 'Ustawienia szablonu',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'        => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Ustawienia stopki',
+        'menu_title'    => 'Ustawienia stopki',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Narzędzia analityczne',
+        'menu_title'    => 'Narzędzia analityczne',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+}
+
+
 // Dodanie własnych styli i skryptów do heada
 function wpdocs_scripts_method()
 {
@@ -90,3 +112,52 @@ function my_custom_login_logo()
 <?php
 }
 add_filter('login_head', 'my_custom_login_logo');
+
+// Inicjalizacja widżetów
+
+
+function arphabet_widgets_init()
+{
+
+    register_sidebar(array(
+        'name'          => 'Stopka - kolumna 1',
+        'id'            => 'footer_col_1',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Stopka - kolumna 2',
+        'id'            => 'footer_col_2',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Stopka - kolumna 3',
+        'id'            => 'footer_col_3',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Stopka - kolumna 4',
+        'id'            => 'footer_col_4',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Stopka - kolumna 5',
+        'id'            => 'footer_col_4',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+}
+add_action('widgets_init', 'arphabet_widgets_init');
