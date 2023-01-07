@@ -171,3 +171,12 @@ function returnTableName(string $name)
     global $wpdb;
     return $wpdb->prefix . $name;
 }
+
+// Register shortcode
+
+add_shortcode("display_slider", "show_slider");
+
+function show_slider()
+{
+    include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "slider-template.php");
+}
