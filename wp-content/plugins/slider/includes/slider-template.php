@@ -9,6 +9,9 @@
     $active = $wpdb->get_row($wpdb->prepare(
         "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='sliderActive'"
     ), ARRAY_A)['option_value'];
+    $blockColor = $wpdb->get_row($wpdb->prepare(
+        "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='blockColor'"
+    ), ARRAY_A)['option_value'];
 
     if ($active) {
         $getSlides = $wpdb->get_results($wpdb->prepare(
@@ -18,20 +21,24 @@
 
             <section class="slider">
                 <?php foreach ($getSlides as $slide) : ?>
-                    <div class="single-slide <?php echo  $i == 1 ? "active" : "" ?>">
-                        <img src="<?php echo $slide['imagePath'] ?>" alt="<?php echo image_alt_by_url($slide['imagePath']) ?>">
-                        <h2><?php echo $slide['heading'] ?></h2>
-                        <p class="slide_description">
-                            <?php echo $slide['description'] ?>
-                        </p>
+                    <div class="single-slide <?php echo  count($getSlides) == 1 ? "active" : "" ?>">
+                        <div class="slide-img">
+                            <img src="<?php echo $slide['imagePath'] ?>" alt="<?php echo image_alt_by_url($slide['imagePath']) ?>">
+                        </div>
+                        <div style="background-color:<?php echo $blockColor ?>CC" class="slide-content">
+                            <h2><?php echo $slide['heading'] ?></h2>
+                            <p class="slide_description">
+                                <?php echo $slide['description'] ?>
+                            </p>
+                        </div>
                     </div>
-                <?php $i++;
+                <?php
                 endforeach ?>
                 <div class="dots">
                     <?php foreach ($getSlides as $slide) : ?>
-                        <div class="single-dot <?php echo  $i == 1 ? "active" : "" ?>">
+                        <div style="background-color:<?php echo  count($getSlides) == 1 ? $blockColor : $blockColor . "CC" ?>;" class="single-dot <?php echo  count($getSlides) == 1 ? "active" : "" ?>">
                         </div>
-                    <?php $i++;
+                    <?php
                     endforeach ?>
                 </div>
             </section>
