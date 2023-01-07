@@ -49,7 +49,7 @@ global $wpdb;
                             "Select * FROM " . returnTableName("slider_options") . " WHERE option_name='blockColor'"
                         ), ARRAY_A);
                         ?>
-                        <label for="blockColor">Czas trwania przejścia</label>
+                        <label for="blockColor">Kolor bloku z tekstem</label>
                         <input class="optionsInput" name="blockColor" type="color" value="<?php echo  !$sliderDuration ? "#000000" : $sliderBlockColor["option_value"] ?>">
                     </div>
                 </div>
@@ -70,7 +70,7 @@ global $wpdb;
             </div>
             <div>
                 <div class="shortcode">
-                    <input type="text" value="[do_shortcode]" readonly>
+                    <input type="text" value="[display_slider]" readonly>
                     <button id="copyShortcodeClipboard" class="plugin_save_changes">Kopiuj shortcode</button>
                 </div>
             </div>
