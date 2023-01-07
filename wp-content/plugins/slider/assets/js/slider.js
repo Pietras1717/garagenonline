@@ -87,7 +87,6 @@ jQuery(document).ready(function () {
     const content = jQuery('textarea[id="content"]').val();
     const imgSrc = jQuery(".imgSection > img").attr("data-img");
     let validationResult = formValidation(heading, content, imgSrc);
-    console.log(validationResult);
     if (validationResult) {
       // pokazanie errorów
       jQuery(".error.heading").text(validationResult.heading);
@@ -150,6 +149,57 @@ jQuery(document).ready(function () {
         );
       },
     });
+  });
+
+  //   Edit slide with ajax
+  jQuery("#frmEditSlide").submit(function () {
+    const id = jQuery(this).attr("data-id");
+    let checked = jQuery('input[name="isshow"]').is(":checked");
+    checked ? (checked = 1) : (checked = 0);
+    const heading = jQuery('input[id="heading"]').val();
+    const content = jQuery('textarea[id="content"]').val();
+    const imgSrc = jQuery(".imgSection > img").attr("data-img");
+    let validationResult = formValidation(heading, content, imgSrc);
+    if (validationResult) {
+      // pokazanie errorów
+      jQuery(".error.heading").text(validationResult.heading);
+      jQuery(".error.content").text(validationResult.content);
+      jQuery(".error.image").text(validationResult.imgSrc);
+    } else {
+      // czyszczenie errorów
+      jQuery(".error.heading").text("");
+      jQuery(".error.content").text("");
+      jQuery(".error.image").text("");
+
+      //   obsługa ajax
+      jQuery.ajax({
+        url: ajax,
+        data: {
+          action: "slider",
+          requestParam: "edit-slide",
+          heading: heading,
+          content: content,
+          imgSrc: imgSrc,
+          slideid: id,
+          checked: checked,
+        },
+        success: function (data) {
+          console.log(data);
+          // Show confirmation allert
+          showMessageAlert(
+            "success",
+            "Slajd " + heading + " został pomyślnie zedytowany"
+          );
+        },
+        error: function () {
+          // Show confirmation allert
+          showMessageAlert(
+            "error",
+            "Wystąpił błąd podczas edycji slajdu. Spróbuj ponownie!"
+          );
+        },
+      });
+    }
   });
 });
 
