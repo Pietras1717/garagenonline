@@ -67,7 +67,7 @@ function add_styles_and_script()
     wp_localize_script('script', 'ajax', admin_url("admin-ajax.php"));
 }
 
-add_action("init", "add_styles_and_script");
+add_action("admin_enqueue_scripts", "add_styles_and_script");
 
 // Add ajax action
 add_action("wp_ajax_slider", "slider_ajax_handler");
@@ -179,4 +179,20 @@ add_shortcode("display_slider", "show_slider");
 function show_slider()
 {
     include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "slider-template.php");
+}
+
+// Get image alt by url
+
+function image_alt_by_url($image_url)
+{
+    global $wpdb;
+
+    if (empty($image_url)) {
+        return false;
+    }
+
+    $query_arr  = $wpdb->get_col($wpdb->prepare("SELECT ID FROM {$wpdb->posts} WHERE guid='%s';", strtolower($image_url)));
+    $image_id   = (!empty($query_arr)) ? $query_arr[0] : 0;
+
+    return get_post_meta($image_id, '_wp_attachment_image_alt', true);
 }
