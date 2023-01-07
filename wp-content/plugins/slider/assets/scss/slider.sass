@@ -1,6 +1,72 @@
-// reset
-@import './reset.sass'
-
 section.slider
-    position: relative
-    width: 100%
+    height: 80vh
+    display: flex
+    flex-direction: column
+    div.slides
+        flex-basis: 100%
+        overflow: hidden
+        position: relative
+        div.single-slide
+            position: relative
+            display: flex
+            height: 100%
+            flex-direction: column
+            left: 0%
+            top: 0%
+            transition: .4s linear
+            opacity: 0
+            &.active
+                opacity: 1
+                position: absolute
+                width: 100%
+            div.slide-img
+                position: relative
+                height: 60%
+                overflow: hidden
+                @media screen and ( orientation: landscape )
+                    height: 100%
+                img
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    height: 100%
+                    min-width: 100%
+            div.slide-content
+                height: 40%
+                padding: 15px
+                color: white
+                @media screen and ( orientation: landscape )
+                    position: absolute
+                    width: 100%
+                    min-height: 50%
+                    bottom: 0
+                @media screen and ( min-width: 1024px )
+                    min-height: 30%
+                    padding: 30px
+                h2
+                    font-size: 20px
+                    padding-bottom: 10px
+                    border-bottom: 1px solid white
+                    @media screen and ( min-width: 768px )
+                        font-size: 32px
+
+                p
+                    padding-top: 10px
+                    font-size: 12px
+                    @media screen and ( min-width: 768px )
+                        font-size: 18px
+
+    div.dots
+        flex-basis: 40px
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        div.single-dot
+            width: 20px
+            height: 20px
+            background: black
+            margin: 0 5px
+            &.active
+                background: rgb(60, 100, 173)
