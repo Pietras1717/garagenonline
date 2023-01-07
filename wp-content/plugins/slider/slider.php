@@ -28,6 +28,7 @@ function slider_plugin_menu()
     add_submenu_page("slides-option", "Ustawienia ogólne", "Ustawienia ogólne", "manage_options", "slides-option", "slides_option");
     add_submenu_page("slides-option", "Lista slajdów", "Lista slajdów", "manage_options", "slides-list", "show_slides_list");
     add_submenu_page("slides-option", "Dodaj slajd", "Dodaj slajd", "manage_options", "add-slide", "add_new_slide");
+    add_submenu_page("slides-option", "", "", "manage_options", "edit-slide", "edit_slide");
 }
 
 add_action("admin_menu", "slider_plugin_menu");
@@ -45,6 +46,11 @@ function show_slides_list()
 function add_new_slide()
 {
     include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "add-new-slide.php");
+}
+
+function edit_slide()
+{
+    include_once(SLIDER_PLUGIN_DIR_PATH . SLIDER_INCLUDES_FOLDER . "edit-slide.php");
 }
 
 // Add basic styles and scripts
@@ -103,6 +109,14 @@ function slider_ajax_handler()
         case "delete-slide":
             $wpdb->delete(returnTableName("slider_tables"), array("id" => $_REQUEST["id"]));
             $wpdb->flush();
+        case "edit-slide":
+            $wpdb->update("hfg_slider_tables", array(
+                "heading" => $_REQUEST["heading"],
+                "description" => $_REQUEST["content"],
+                "imagePath" => $_REQUEST["imgSrc"],
+                "isactive" => $_REQUEST["checked"],
+            ), array("id" => $_REQUEST["slideid"]));
+            print_r($_REQUEST);
     }
 }
 
