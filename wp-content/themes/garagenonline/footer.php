@@ -132,3 +132,4 @@
         </div>
     </div>
 </section>
+<?php wp_footer(); ?>

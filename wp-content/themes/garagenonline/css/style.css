@@ -1,180 +1,620 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Saira+Condensed:wght@300;400;700&display=swap");
+
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-family: "Noto Sans", sans-serif;
+    font-family: "Noto Sans", sans-serif;
 }
 
 footer {
-  background-color: rgb(0, 0, 0);
-  padding: 40px;
-  color: #a6a6a6;
+    background-color: rgb(0, 0, 0);
+    padding: 40px;
+    color: #a6a6a6;
 }
+
 @media screen and (max-width: 500px) {
-  footer {
-    padding: 20px;
-  }
+    footer {
+        padding: 20px;
+    }
 }
+
 footer .footer-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
+
 @media screen and (max-width: 1024px) {
-  footer .footer-wrapper {
-    -ms-flex-wrap: wrap;
+    footer .footer-wrapper {
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-  footer .footer-wrapper::after {
-    content: "";
-    -webkit-box-flex: 1;
+    }
+
+    footer .footer-wrapper::after {
+        content: "";
+        -webkit-box-flex: 1;
         -ms-flex: auto;
-            flex: auto;
-  }
+        flex: auto;
+    }
 }
+
 footer .footer-wrapper .footer-column {
-  -ms-flex-preferred-size: 13%;
-      flex-basis: 13%;
+    -ms-flex-preferred-size: 13%;
+    flex-basis: 13%;
 }
+
 @media screen and (max-width: 1024px) {
-  footer .footer-wrapper .footer-column {
-    margin-bottom: 20px;
-    -ms-flex-preferred-size: 25%;
+    footer .footer-wrapper .footer-column {
+        margin-bottom: 20px;
+        -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
-  }
+    }
 }
+
 @media screen and (max-width: 500px) {
-  footer .footer-wrapper .footer-column {
-    -ms-flex-preferred-size: 50%;
+    footer .footer-wrapper .footer-column {
+        -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
-  }
+    }
 }
+
 footer .footer-wrapper .footer-column.first {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
 }
+
 @media screen and (max-width: 1024px) {
-  footer .footer-wrapper .footer-column.first {
-    -ms-flex-preferred-size: 35%;
+    footer .footer-wrapper .footer-column.first {
+        -ms-flex-preferred-size: 35%;
         flex-basis: 35%;
-  }
+    }
 }
+
 @media screen and (max-width: 771px) {
-  footer .footer-wrapper .footer-column.first {
-    -ms-flex-preferred-size: 100%;
+    footer .footer-wrapper .footer-column.first {
+        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-  }
+    }
 }
+
 footer .footer-wrapper .footer-column.last {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
 }
+
 @media screen and (max-width: 1024px) {
-  footer .footer-wrapper .footer-column.last {
-    -ms-flex-preferred-size: 35%;
+    footer .footer-wrapper .footer-column.last {
+        -ms-flex-preferred-size: 35%;
         flex-basis: 35%;
-    -ms-flex-item-align: start;
+        -ms-flex-item-align: start;
         align-self: flex-start;
-  }
+    }
 }
+
 @media screen and (max-width: 771px) {
-  footer .footer-wrapper .footer-column.last {
-    -ms-flex-preferred-size: 100%;
+    footer .footer-wrapper .footer-column.last {
+        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-  }
+    }
 }
+
 footer .footer-wrapper .footer-column img.logo {
-  width: 100%;
-  max-width: 200px;
+    width: 100%;
+    max-width: 200px;
 }
+
 footer .footer-wrapper .footer-column h3 {
-  color: white;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
 }
+
 footer .footer-wrapper .footer-column p {
-  font-size: 14px;
-  line-height: 25px;
+    font-size: 14px;
+    line-height: 25px;
 }
+
 footer .footer-wrapper .footer-column span {
-  font-size: 14px;
-  line-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
 }
+
 footer .footer-wrapper .footer-column i {
-  color: rgb(60, 100, 173);
-  margin-right: 5px;
+    color: rgb(60, 100, 173);
+    margin-right: 5px;
 }
+
 footer .footer-wrapper .footer-column nav ul {
-  list-style: none;
+    list-style: none;
 }
+
 footer .footer-wrapper .footer-column nav ul li {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
+
 footer .footer-wrapper .footer-column nav ul li a {
-  text-decoration: none;
-  font-size: 14px;
-  padding: 5px 0;
-  color: #a6a6a6;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+    color: #a6a6a6;
 }
+
 footer .footer-wrapper .footer-column nav ul li a::before {
-  content: "➥";
+    content: "➥";
 }
+
 footer .footer-wrapper .footer-column nav ul li a:hover {
-  color: rgb(60, 100, 173);
+    color: rgb(60, 100, 173);
 }
+
 footer .footer-wrapper .footer-column .single-information {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
+
+footer .footer-wrapper .footer-column .single-information span {
+    font-size: 14px;
+}
+
 footer .footer-wrapper .footer-column .single-information a {
-  text-decoration: none;
-  font-size: 14px;
-  color: #a6a6a6;
+    text-decoration: none;
+    font-size: 14px;
+    color: #a6a6a6;
 }
+
 footer .footer-wrapper .footer-column .single-information a:hover {
-  color: rgb(60, 100, 173);
+    color: rgb(60, 100, 173);
 }
 
 .copyright {
-  background-color: black;
-  border-top: 1px solid #3e3e3e;
-  padding: 10px 40px;
+    background-color: black;
+    border-top: 1px solid #3e3e3e;
+    padding: 10px 40px;
 }
+
 @media screen and (max-width: 500px) {
-  .copyright {
-    padding: 10px 20px;
-  }
+    .copyright {
+        padding: 10px 20px;
+    }
 }
+
 .copyright .copyright-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
+
 .copyright .copyright-wrapper p {
-  color: #a6a6a6;
-  font-size: 13px;
+    color: #a6a6a6;
+    font-size: 13px;
+}
+
+div.navbar {
+    background-color: white;
+    padding: 10px 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar {
+        padding: 10px 40px;
+    }
+
+    div.navbar.active {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+div.navbar .navbar-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+div.navbar .navbar-wrapper .close-menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.navbar .navbar-wrapper .close-menu-btn.active {
+    display: block;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu {
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .woocommerce-menu {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+    }
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu.disabled {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .woocommerce-menu.disabled {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul {
+    list-style: none;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li {
+    border: 2px solid #ededed;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 20px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #767676;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li a {
+        padding: 0px 10px;
+    }
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li a:hover {
+    color: white;
+    background-color: rgb(60, 100, 173);
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li ul.sub-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 2px solid #ededed;
+    background-color: white;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    z-index: 2;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li ul.sub-menu.active {
+    visibility: visible;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li ul.sub-menu li {
+    border: none;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .account-menu ul li ul.sub-menu li a {
+    font-size: 14px;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .show-mini-cart {
+    padding: 0px 20px;
+    line-height: 40px;
+    margin-left: 5px;
+    border: none;
+    background: rgb(60, 100, 173);
+    color: white;
+    font-weight: bold;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .woocommerce-menu .show-mini-cart {
+        padding: 0px 10px;
+    }
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .show-mini-cart:hover {
+    background: #e9232a;
+}
+
+div.navbar .navbar-wrapper .woocommerce-menu .show-mini-cart i {
+    font-size: 16px;
+}
+
+div.navbar .navbar-wrapper .main-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    overflow: scroll;
+    z-index: 1;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+@media screen and (min-width: 768px) {
+    div.navbar .navbar-wrapper .main-menu {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu {
+        position: static;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        overflow: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+div.navbar .navbar-wrapper .main-menu ul {
+    list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu ul li {
+        margin: 0 2.5px;
+    }
+}
+
+div.navbar .navbar-wrapper .main-menu ul li:hover {
+    background-color: rgb(60, 100, 173);
+}
+
+div.navbar .navbar-wrapper .main-menu ul li:hover a {
+    color: white;
+}
+
+div.navbar .navbar-wrapper .main-menu ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu ul li a {
+        padding: 8px 10px;
+        position: relative;
+    }
+
+    div.navbar .navbar-wrapper .main-menu ul li a i {
+        margin-left: 3px;
+    }
+}
+
+div.navbar .navbar-wrapper .main-menu ul li.current_page_item {
+    background-color: rgb(60, 100, 173);
+}
+
+div.navbar .navbar-wrapper .main-menu ul li.current_page_item a {
+    color: white;
+}
+
+div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu {
+    background-color: rgb(60, 100, 173);
+    display: none;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu {
+        position: absolute;
+        margin-top: 5px;
+        max-width: 350px;
+    }
+}
+
+div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu.active {
+    display: block;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu.active li {
+        margin: 0;
+    }
+}
+
+div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu.active li a {
+    font-weight: normal;
+    font-size: 14px;
+    padding-left: 25px;
+}
+
+div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu.active li:hover {
+    background-color: white;
+}
+
+div.navbar .navbar-wrapper .main-menu ul li ul.sub-menu.active li:hover a {
+    color: black;
+}
+
+div.navbar .navbar-wrapper .main-menu.active {
+    right: 0;
+}
+
+div.navbar .navbar-wrapper div.logo-wrapper {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper div.logo-wrapper {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0;
+    }
+}
+
+div.navbar .navbar-wrapper div.logo-wrapper.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    background-color: white;
+    margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper div.logo-wrapper.active.active {
+        position: unset;
+        width: unset;
+        padding: unset;
+        background-color: unset;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper div.logo-wrapper .custom-logo-link {
+        margin-right: 10px;
+    }
+}
+
+div.navbar .navbar-wrapper div.logo-wrapper .custom-logo-link img {
+    max-width: 220px;
+    height: auto;
+}
+
+@media screen and (min-width: 1280px) {
+    div.navbar .navbar-wrapper div.logo-wrapper .custom-logo-link img {
+        max-width: 260px;
+    }
+}
+
+div.navbar .navbar-wrapper div.logo-wrapper .burger {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    div.navbar .navbar-wrapper div.logo-wrapper .burger {
+        display: none;
+    }
+}
+
+div.navbar .navbar-wrapper div.logo-wrapper .burger:hover {
+    color: rgb(60, 100, 173);
 }
 
 div.container {
-  max-width: 1440px;
-  margin: 0 auto;
+    max-width: 1440px;
+    margin: 0 auto;
 }
