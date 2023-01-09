@@ -1,0 +1,23 @@
+div.pagination
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    margin: 20px 0
+    a,span
+        padding: 10px 15px
+        text-align: center
+        border: 1px solid $baseColor
+        font-size: 14px !important
+        text-transform: uppercase
+        color: $baseColor
+        position: relative
+        transition: .3s linear
+        z-index: 0
+        margin: 3px
+        &:hover:not(span)
+            color: white
+            background-color: $baseColor
+    span
+        background-color: $baseColor
+        color: white

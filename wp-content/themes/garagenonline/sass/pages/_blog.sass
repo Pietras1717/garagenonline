@@ -1,0 +1,130 @@
+
+.blog-posts
+    margin: 50px 0
+    &.blog
+        margin: 0
+        display: flex
+        flex-direction: column
+    h3
+        color: $baseColor
+        text-align: center
+        margin-bottom: 30px
+        margin-top: 20px
+        font-size: 22px
+        @media screen and ( min-width: 768px )
+            font-size: 28px
+            margin-bottom: 50px
+    .posts-container
+        .posts
+            display: flex
+            flex-direction: column
+            align-items: center
+            @media screen and ( min-width: 768px )
+                flex-direction: row
+                justify-content: center
+                flex-wrap: wrap
+            .single-post
+                box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%)
+                border-bottom-left-radius: 16px
+                border-bottom-right-radius: 16px
+                border-top-left-radius: 16px
+                border-top-right-radius: 16px
+                text-decoration: none
+                cursor: pointer
+                margin: 15px 0
+                display: flex
+                flex-direction: column
+                max-width: 350px
+                @media screen and ( min-width: 768px )
+                    flex-basis: 45%
+                    margin: 15px 10px
+                @media screen and ( min-width: 1024px )
+                    flex-basis: 31%
+                .img
+                    height: 180px
+                    position: relative
+                    overflow: hidden
+                    border-top-left-radius: 16px
+                    border-top-right-radius: 16px
+                    img
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                        transform: translate(-50%, -50%)
+                        width: 100%
+                        min-height: 100%
+                        border-top-left-radius: 16px
+                        border-top-right-radius: 16px
+                .post-text
+                    padding: 15px
+                    flex-grow: 1
+                    .category
+                        background-color: $baseColor
+                        cursor: pointer
+                        padding: 5px 20px
+                        color: white
+                        text-transform: uppercase
+                        font-size: 14px
+                    h2
+                        font-size: 14px
+                        color: $baseColor
+                        margin-bottom: 20px
+                        min-height: 60px
+                        @media screen and ( min-width: 1024px )
+                            font-size: 15px
+                    .short-description
+                        margin: 10px 0
+                        min-height: 80px
+                        text-align: justify
+                        word-wrap: break-word
+                        hyphens: auto
+                        font-size: 13px
+                .info
+                    padding: 15px 0
+                    margin: 0 15px
+                    border-top: 1px solid $baseColor
+                    display: flex
+                    align-items: center
+                    img
+                        width: 25px
+                        height: 25px
+                        border-radius: 50%
+                        margin-right: 3px
+                    .data
+                        flex-grow: 1
+                        display: flex
+                        justify-content: flex-end
+.home-link
+    position: relative
+    padding: 30px 0
+    margin: 20px 0
+    text-align: center
+    &::before
+        content: " "
+        display: block
+        background: $baseColor
+        height: 2px
+        position: absolute
+        top: 50%
+        left: 0
+        width: 100%
+        z-index: 1
+    div.inner
+        display: inline
+        background: white
+        z-index: 2
+        position: relative
+        a
+            border: 2px solid $baseColor
+            z-index: 2
+            position: relative
+            margin: 0 20px
+            padding: 10px 20px
+            color: $baseColor
+            font-size: 16px
+            font-weight: bold
+            text-transform: uppercase
+            transition: .3s linear
+            &:hover
+                background-color: $baseColor
+                color: white

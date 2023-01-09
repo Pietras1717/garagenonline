@@ -1,7 +1,11 @@
 <?php
 get_header();
-do_shortcode("[display_slider]");
-the_content();
+get_template_part('template-parts/page-header');
 ?>
+<main>
+    <div class="container">
+        <?php the_content() ?>
+    </div>
+</main>
 <?php
 get_footer();

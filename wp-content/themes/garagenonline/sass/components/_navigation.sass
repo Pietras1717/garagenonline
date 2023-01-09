@@ -5,6 +5,8 @@ div.navbar
         padding: 10px 40px
         &.active
             position: fixed
+            top: 0
+            left: 0
             width: 100%
             z-index: 1
     .navbar-wrapper
@@ -119,6 +121,7 @@ div.navbar
                 @media screen and ( min-width: 1024px )
                     display: flex
                 li
+                    transition: .3s linear
                     @media screen and ( min-width: 1024px )
                         margin: 0 2.5px
                     &:hover

@@ -34,7 +34,7 @@ add_action('wp_enqueue_scripts', 'wpdocs_scripts_method');
 
 
 // Ukrywanie paska edycji WP
-if (current_user_can('manage_options')) {
+if (!current_user_can('manage_options')) {
     add_filter('show_admin_bar', '__return_false');
 }
 
@@ -124,3 +124,105 @@ function custom_mini_cart()
 <?php
 }
 add_shortcode('mini-cart', 'custom_mini_cart');
+
+
+// Dodanie własnego logo przy logowaniu
+function my_custom_login_logo()
+{
+    $logo_url = (function_exists('the_custom_logo') && get_theme_mod('custom_logo')) ? wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full') : false;
+    $logo_url = ($logo_url) ? $logo_url[0] : generate_get_option('logo');
+    $logo_url = esc_url(apply_filters('generate_logo', $logo_url));
+?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo $logo_url ?>) !important;
+            margin: 0 auto;
+            background-size: 250px;
+            width: 100%;
+            max-width: 300px;
+        }
+    </style>
+<?php
+}
+
+add_filter('login_head', 'my_custom_login_logo');
+
+// Dodanie miniaturek do posty
+add_theme_support('post-thumbnails');
+
+
+// Usunięcie strony autora
+
+add_action('template_redirect', 'my_custom_disable_author_page');
+
+function my_custom_disable_author_page()
+{
+    global $wp_query;
+    if (is_author()) {
+        $wp_query->set_404();
+        // status_header(404);
+        wp_redirect(home_url());
+    }
+}
+
+// Filtr do mniejszego tekstu dla krotkiego opisu
+
+add_filter('excerpt_length', function ($length) {
+    return 25;
+});
+
+// Dodanie Options Page
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title'     => 'Ustawienia szablonu',
+        'menu_title'    => 'Ustawienia szablonu',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'        => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Narzędzia analityczne',
+        'menu_title'    => 'Narzędzia analityczne',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+}
+
+// Inicjalizacja widżetów
+
+function arphabet_widgets_init()
+{
+
+    register_sidebar(array(
+        'name'          => 'Blog Sidebar',
+        'id'            => 'blog_right',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
+}
+add_action('widgets_init', 'arphabet_widgets_init');
+
+
+// Funkcja do paginacji
+
+function theme_pagination()
+{
+
+    global $wp_query;
+    $totalPages = $wp_query->max_num_pages;
+    $currentPage = max(1, get_query_var('paged'));
+
+    if ($totalPages > 1) {
+
+        $big = '9999999';
+        return paginate_links(array(
+            'format'        => 'page/%#%',
+            'base'          => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            'current'       => $currentPage,
+            'total'         => $totalPages,
+            'prev_text'     => __('Poprzednia', 'domain'),
+            'next_text'     => __('Następna', 'domain')
+        ));
+    }
+}
