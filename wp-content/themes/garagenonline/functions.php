@@ -107,20 +107,20 @@ function logout_without_confirm($action, $result)
     }
 }
 
+// Funkcja dla mini koszyka
 
 function custom_mini_cart()
 {
-    echo '<a href="#" class="dropdown-back" data-toggle="dropdown"> ';
-    echo '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
-    echo '<div class="basket-item-count" style="display: inline;">';
-    echo '<span class="cart-items-count count">';
-    echo WC()->cart->get_cart_contents_count();
-    echo '</span>';
-    echo '</div>';
-    echo '</a>';
-    echo '<ul class="dropdown-menu dropdown-menu-mini-cart">';
-    echo '<li> <div class="widget_shopping_cart_content">';
-    woocommerce_mini_cart();
-    echo '</div></li></ul>';
+?>
+    <div class="mini-cart">
+        <?php
+        woocommerce_mini_cart();
+
+        ?>
+        <a class="continue-shopping" href="<?php echo esc_url(apply_filters('woocommerce_continue_shopping_redirect', wc_get_page_permalink('shop'))); ?>">
+            <?php echo __('Continue shopping', 'woocommerce') ?>
+        </a>
+    </div>
+<?php
 }
-add_shortcode('quadlayers-mini-cart', 'custom_mini_cart');
+add_shortcode('mini-cart', 'custom_mini_cart');

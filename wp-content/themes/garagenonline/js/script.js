@@ -63,3 +63,11 @@ jQuery(document).click(function (t) {
     $("ul.sub-menu.active").removeClass("active");
   }
 });
+
+// mini cart showing
+
+const miniCart = document.querySelector(".mini-cart");
+const triggerButton = document.querySelector("#show-mini-cart");
+triggerButton.addEventListener("click", function () {
+  miniCart.classList.toggle("is-showing");
+});

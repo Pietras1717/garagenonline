@@ -16,4 +16,5 @@
     <div class="wrapper">
         <?php
         get_template_part("/template-parts/navigation");
+        get_template_part("/template-parts/mini-cart");
         ?>

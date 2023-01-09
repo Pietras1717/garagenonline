@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+* ::-webkit-scrollbar {
+    display: non;
+}
+
 html {
     font-family: "Noto Sans", sans-serif;
 }
@@ -612,6 +616,180 @@ div.navbar .navbar-wrapper div.logo-wrapper .burger {
 
 div.navbar .navbar-wrapper div.logo-wrapper .burger:hover {
     color: rgb(60, 100, 173);
+}
+
+.mini-cart {
+    position: fixed;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    z-index: 2;
+    height: 100%;
+    padding: 20px;
+    overflow: scroll;
+    border: 2px solid rgb(60, 100, 173);
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.mini-cart.is-showing {
+    left: 0%;
+}
+
+@media screen and (min-width: 768px) {
+    .mini-cart {
+        height: 80%;
+        left: auto;
+        right: -100%;
+    }
+
+    .mini-cart.is-showing {
+        right: 0;
+        left: auto;
+    }
+}
+
+.mini-cart ul {
+    list-style: none;
+}
+
+.mini-cart ul li {
+    margin: 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.mini-cart ul li span.quantity {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin: 5px 0;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    font-size: 14px;
+}
+
+.mini-cart ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #707070;
+    text-decoration: none;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    -ms-flex-preferred-size: calc(100% - 30px);
+    flex-basis: calc(100% - 30px);
+    text-align: center;
+}
+
+.mini-cart ul li a:hover {
+    color: rgb(60, 100, 173);
+}
+
+.mini-cart ul li a img {
+    max-width: 70px;
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.mini-cart ul li a.remove {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    -ms-flex-preferred-size: 30px;
+    flex-basis: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 26px;
+    background-color: red;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.mini-cart ul li a.remove:hover {
+    background-color: rgb(60, 100, 173);
+    color: white;
+}
+
+.mini-cart p.total {
+    padding: 10px 0;
+    border-top: 2px solid rgb(60, 100, 173);
+    border-bottom: 2px solid rgb(60, 100, 173);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.mini-cart .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.mini-cart .buttons a {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mini-cart .buttons a.wc-forward {
+    -ms-flex-preferred-size: 48%;
+    flex-basis: 48%;
+    padding: 10px 0;
+    background-color: rgb(60, 100, 173);
+    color: white;
+}
+
+.mini-cart a.continue-shopping {
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    padding: 10px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 div.container {

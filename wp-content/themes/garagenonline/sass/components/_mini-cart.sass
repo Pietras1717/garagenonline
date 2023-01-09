@@ -1,0 +1,99 @@
+.mini-cart
+    position: fixed
+    bottom: 0
+    left: -100%
+    width: 100%
+    max-width: 360px
+    background: white
+    z-index: 2
+    height: 100%
+    padding: 20px
+    overflow: scroll
+    border: 2px solid $baseColor
+    transition: .2s linear
+    &.is-showing
+        left: 0%
+    @media screen and ( min-width: 768px )
+        height: 80%
+        left: auto
+        right: -100%
+        &.is-showing
+            right: 0
+            left: auto
+    ul
+        list-style: none
+        li
+            margin: 5px 0
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-wrap: wrap
+            span.quantity
+                order: 2
+                margin: 5px 0
+                flex-basis: 100%
+                font-size: 14px
+            a
+                display: flex
+                color: #707070
+                text-decoration: none
+                justify-content: flex-start
+                align-items: center
+                font-size: 12px
+                flex-basis: calc( 100% - 30px )
+                text-align: center
+                &:hover
+                    color: $baseColor
+                img
+                    max-width: 70px
+                    width: 100%
+                    height: auto
+                    margin-right: 20px
+            a.remove
+                order: 1
+                flex-basis: 30px
+                height: 30px
+                border-radius: 50%
+                font-size: 26px
+                background-color: red
+                color: white
+                display: flex
+                justify-content: center
+                &:hover
+                    background-color: $baseColor
+                    color: white
+    p.total
+        padding: 10px 0
+        border-top: 2px solid $baseColor
+        border-bottom: 2px solid $baseColor
+        display: flex
+        justify-content: space-between
+        font-size: 14px
+    .buttons
+        display: flex
+        justify-content: space-between
+        margin: 5px 0
+        a
+            text-align: center
+            text-decoration: none
+            text-transform: uppercase
+            cursor: pointer
+            font-size: 14px
+            font-weight: bold
+        a.wc-forward
+            flex-basis: 48%
+            padding: 10px 0
+            background-color: $baseColor
+            color: white
+    a.continue-shopping
+        text-decoration: none
+        text-transform: uppercase
+        background-color: black
+        color: white
+        display: flex
+        flex-basis: 100%
+        padding: 10px 0
+        justify-content: center
+        cursor: pointer
+        font-size: 14px
+        font-weight: bold
