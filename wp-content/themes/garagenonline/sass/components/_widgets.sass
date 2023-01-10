@@ -1,5 +1,83 @@
 div.widgets
     display: flex
+    width: 100%
+    max-width: 350px
     flex-direction: column
     border: 2px solid $baseColor
-    border-radius: 5px
+    border-radius: 16px
+    padding: 15px
+    list-style-type: none
+    @media screen and ( min-width: 1024px )
+        max-width: 300px
+        margin: 15px 0 15px 20px
+    h3, h2
+        padding: 10px 0
+        text-align: left
+        font-size: 15px
+        margin: 0 0 10px 0
+        color: $baseColor
+    .wp-block-search__inside-wrapper
+        display: flex
+        margin: 5px 0
+        input[type="search"]
+            border-left: 1px solid $baseColor
+            border-top: 1px solid $baseColor
+            border-bottom: 1px solid $baseColor
+            border-right: none
+        button
+            margin: 0
+            background-color: $baseColor
+            color: white
+            padding: 0 10px
+            cursor: pointer
+    ul
+        list-style: none
+        li
+            a
+                display: block
+                margin: 5px 0
+                font-size: 14px
+                color: black
+                line-height: 20px
+                &:hover
+                    font-weight: bold
+                    color: $baseColor
+    .tagcloud
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 10px
+        a
+            padding: 5px 10px
+            margin: 5px 5px 5px 0
+            border: 1px solid $baseColor
+            color: $baseColor
+            transition: .3s linear
+            &:hover
+                background-color: $baseColor
+                color: white
+    .wp-calendar-table
+        width: 100%
+        caption
+            text-align: left
+            text-transform: uppercase
+            font-weight: bold
+            margin: 5px 0
+        td,th
+            text-align: center
+            a
+                display: block
+                background: $baseColor
+                color: white
+                cursor: pointer
+    nav.wp-calendar-nav
+        display: flex
+        justify-content: center
+        margin: 5px 0
+        span
+            margin: 0 3px
+            a
+                display: block
+                padding: 3px 5px
+                background-color: $baseColor
+                color: white
+                cursor: pointer

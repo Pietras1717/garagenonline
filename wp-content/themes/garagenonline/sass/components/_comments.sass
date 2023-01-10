@@ -1,0 +1,89 @@
+.comments-title
+    padding: 15px
+    background-color: $baseColor
+    border-top-left-radius: 16px
+    border-top-right-radius: 16px
+    font-size: 16px
+    color: white
+    @media screen and ( min-width: 768px )
+        padding: 15px 40px
+.comment-list
+    padding: 15px
+    list-style: none
+    @media screen and ( min-width: 768px )
+        padding: 40px
+    li
+        padding: 10px 0
+        border-bottom: 1px dashed #eee
+        .comment-body
+            display: flex
+            flex-direction: column
+            font-size: 14px
+            p
+                word-wrap: break-word
+                hyphens: auto
+            .comment-author
+                img
+                    border-radius: 50%
+            .comment-meta
+                margin: 5px 0
+                a
+                    color: $baseColor
+.comment-navigation
+    padding: 15px
+    display: flex
+    justify-content: flex-start
+    div
+        margin: 0 5px
+        a
+            color: $baseColor
+            font-size: 15px
+            padding: 5px 10px
+            transition: .3s linear
+            &:hover
+                background-color: $baseColor
+                color: white
+#respond
+    #reply-title
+        padding: 15px
+        background-color: $baseColor
+        font-size: 16px
+        color: white
+        text-align: left
+        @media screen and ( min-width: 768px )
+            padding: 15px 40px
+    form
+        padding: 15px
+        font-size: 14px
+        @media screen and ( min-width: 768px )
+            padding: 0 40px
+        p
+            margin: 5px 0
+            *
+                margin: 5px 0
+            #comment-error, #author-error, #email-error
+                color: red
+            textarea
+                width: 100%
+                resize: none
+                border: 1px solid $baseColor
+                outline: none
+            input
+                width: 100%
+                height: 40px
+                border: 1px solid $baseColor
+                outline: none
+                &[type="checkbox"]
+                    accent-color: $baseColor
+                    width: 15px
+                    height: auto
+                &[type="submit"]
+                    width: auto
+                    color: $baseColor
+                    padding: 0 20px
+                    background-color: white
+                    transition: .3s linear
+                    cursor: pointer
+                    &:hover
+                        background-color: $baseColor
+                        color: white

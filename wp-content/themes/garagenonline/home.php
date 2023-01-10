@@ -4,13 +4,15 @@ get_template_part('template-parts/page-header');
 ?>
 <main>
     <div class="container">
+        <!-- Breadcrumbs -->
+        <?php get_template_part("/template-parts/breadcrumbs"); ?>
         <!-- wpisy blogowe -->
         <?php
         $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 1));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts blog">
                 <div class="posts-container">
-                    <div class="posts">
+                    <div class="posts blog">
                         <?php while ($recent_post->have_posts()) : $recent_post->the_post() ?>
                             <div class="single-post" onclick="window.location='<?php echo the_permalink() ?>'">
                                 <div class="img">
@@ -36,6 +38,14 @@ get_template_part('template-parts/page-header');
                             </div>
                         <?php endwhile ?>
                     </div>
+                    <?php
+                    $total = $recent_post->post_count;
+                    ?>
+                    <?php if (!$total) : ?>
+                        <div class="empty">
+                            Aktualnie nie mamy wpisów
+                        </div>
+                    <?php endif ?>
                     <div class="pagination">
                         <?php echo theme_pagination(); ?>
                     </div>

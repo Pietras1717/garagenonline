@@ -1,0 +1,93 @@
+.one-post
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%)
+    border-bottom-left-radius: 16px
+    border-bottom-right-radius: 16px
+    border-top-left-radius: 16px
+    border-top-right-radius: 16px
+    text-decoration: none
+    cursor: pointer
+    margin: 15px 0
+    display: flex
+    flex-direction: column
+    width: 100%
+    transition: .3s linear
+    @media screen and ( min-width: 768px )
+        margin: 15px 10px
+        max-width: 1000px
+    .img
+        height: 180px
+        position: relative
+        overflow: hidden
+        border-top-left-radius: 16px
+        border-top-right-radius: 16px
+        @media screen and ( min-width: 1024px )
+            height: 320px
+        img
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 100%
+            min-height: 100%
+            border-top-left-radius: 16px
+            border-top-right-radius: 16px
+    .post-text
+        padding: 15px
+        flex-grow: 1
+        @media screen and ( min-width: 768px )
+            padding: 40px
+        .category
+            background-color: $baseColor
+            cursor: pointer
+            padding: 5px 20px
+            color: white
+            text-transform: uppercase
+            font-size: 14px
+        h2
+            font-size: 20px
+            color: black
+            margin: 40px 0
+            text-align: left
+            @media screen and ( min-width: 1024px )
+                font-size: 26px
+
+        .content
+            font-size: 14px!important
+            *
+                margin: 20px 0
+                height: unset
+                min-height: unset
+                font-size: 14pp
+                @media screen and ( min-width: 1024px )
+                    font-size: 16px
+            h2, h3, h4, h5
+                font-size: 16px
+                color: black
+                text-align: left
+                @media screen and ( min-width: 1024px )
+                    font-size: 18px
+            a
+                color: black
+                font-weight: bold
+                &:hover
+                    background-color: $baseColor
+            @media screen and ( min-width: 1024px )
+                font-size: 15px
+    .info
+        padding: 15px 0
+        margin: 0 15px
+        border-bottom: 1px solid $baseColor
+        display: flex
+        align-items: center
+        @media screen and ( min-width: 768px )
+            padding: 40px 0
+            margin: 0 40px
+        img
+            width: 25px
+            height: 25px
+            border-radius: 50%
+            margin-right: 3px
+        .data
+            flex-grow: 1
+            display: flex
+            justify-content: flex-end

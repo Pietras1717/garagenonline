@@ -8,12 +8,20 @@ get_template_part('template-parts/page-header');
         <?php get_template_part("/template-parts/breadcrumbs"); ?>
         <!-- wpisy blogowe -->
         <?php
-        $recent_post = new WP_Query(array('post_type' => 'post'));
+        $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 1, 'tag' => get_queried_object()->name));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts blog">
                 <div class="posts-container">
+                    <div class="category-info">
+                        <h2>
+                            <?php echo get_queried_object()->name ?>
+                        </h2>
+                        <p class="desc">
+                            <?php echo get_queried_object()->description ?>
+                        </p>
+                    </div>
                     <div class="posts blog">
-                        <?php while (have_posts()) : the_post() ?>
+                        <?php while ($recent_post->have_posts()) : $recent_post->the_post() ?>
                             <div class="single-post" onclick="window.location='<?php echo the_permalink() ?>'">
                                 <div class="img">
                                     <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>">
@@ -43,7 +51,7 @@ get_template_part('template-parts/page-header');
                     ?>
                     <?php if (!$total) : ?>
                         <div class="empty">
-                            Aktualnie nie mamy wpisów
+                            Aktualnie nie mamy wpisów dla kategorii: <?php echo get_queried_object()->name ?>
                         </div>
                     <?php endif ?>
                     <div class="pagination">

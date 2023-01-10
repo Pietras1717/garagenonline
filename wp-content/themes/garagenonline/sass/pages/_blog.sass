@@ -1,10 +1,14 @@
-
 .blog-posts
     margin: 50px 0
     &.blog
         margin: 0
         display: flex
         flex-direction: column
+        align-items: center
+        @media screen and ( min-width: 1024px )
+            flex-direction: row
+            align-items: flex-start
+            justify-content: space-between
     h3
         color: $baseColor
         text-align: center
@@ -15,6 +19,7 @@
             font-size: 28px
             margin-bottom: 50px
     .posts-container
+        width: 100%
         .posts
             display: flex
             flex-direction: column
@@ -23,6 +28,9 @@
                 flex-direction: row
                 justify-content: center
                 flex-wrap: wrap
+            &.blog
+                @media screen and ( min-width: 1024px )
+                    justify-content: flex-start
             .single-post
                 box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%)
                 border-bottom-left-radius: 16px
@@ -35,11 +43,23 @@
                 display: flex
                 flex-direction: column
                 max-width: 350px
+                transition: .3s linear
+                &:hover
+                    background-color: $baseColor
+                    .post-text
+                        color: white
+                        .category
+                            background-color: white
+                            border: 1px solid $baseColor
+                            color: $baseColor
+                        h2
+                            color: white
+                    .info
+                        border-color: white
+                        color: white
                 @media screen and ( min-width: 768px )
                     flex-basis: 45%
                     margin: 15px 10px
-                @media screen and ( min-width: 1024px )
-                    flex-basis: 31%
                 .img
                     height: 180px
                     position: relative
@@ -73,7 +93,7 @@
                         @media screen and ( min-width: 1024px )
                             font-size: 15px
                     .short-description
-                        margin: 10px 0
+                        margin: 20px 0 10px 0
                         min-height: 80px
                         text-align: justify
                         word-wrap: break-word
