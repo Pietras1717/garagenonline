@@ -1,0 +1,41 @@
+.montagefilme
+    padding: 0 20px 20px 20px
+    @media screen and ( min-width: 1024px )
+        padding: 0 40px 40px 40px
+    .montagefilme-container
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        .single-montagefilme
+            display: flex
+            flex-direction: column
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%)
+            border-radius: 16px
+            width: 100%
+            justify-content: flex-start
+            align-items: center
+            padding: 10px
+            font-size: 14px
+            color: black
+            text-align: justify
+            word-wrap: break-word
+            hyphens: auto
+            text-align: center
+            margin: 25px 0px
+            @media screen and ( min-width: 768px )
+                width: calc( 50% - 10px )
+                padding: 25px
+            p
+                font-size: 16px
+                margin: 20px 0
+                text-transform: uppercase
+                font-weight: bold
+                color: $baseColor
+                flex-grow: 1
+            @media screen and ( min-width: 768px )
+                font-size: 14px
+            img
+                width: 40px
+                margin-bottom: 10px
+            video
+                width: 100%

@@ -108,7 +108,7 @@
                         <i class="fa fa-location-pin"></i><span>60 29th Street San Francisco, CA 94110 507-Union Trade Center, United States of America</span>
                     </div>
                     <div class="single-information">
-                        <i class="fa fa-phone"></i><a href="tel:030 / 966 15 487">030 / 966 15 487</a>
+                        <i class="fa fa-phone"></i><a href="tel:03096615487">030 / 966 15 487</a>
                     </div>
                     <div class="single-information">
                         <i class="fa fa-envelope"></i><a href="mailto:">info@garagenonline.eu</a>

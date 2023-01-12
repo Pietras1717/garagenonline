@@ -28,7 +28,9 @@ add_filter('upload_mimes', 'cc_mime_types');
 function wpdocs_scripts_method()
 {
     wp_enqueue_style('theme-css', get_stylesheet_directory_uri() . '/css/style.css', array());
+    wp_enqueue_style('lightbox', get_stylesheet_directory_uri() . '/css/lightbox.css', array());
     wp_enqueue_script('theme-script', get_stylesheet_directory_uri() . '/js/script.js', NULL, NULL, true);
+    wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/js/lightbox.js', NULL, NULL, true);
 }
 add_action('wp_enqueue_scripts', 'wpdocs_scripts_method');
 
@@ -200,6 +202,14 @@ function arphabet_widgets_init()
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',
     ));
+    register_sidebar(array(
+        'name'          => 'Shop Sidebar',
+        'id'            => 'shop_sidebar',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ));
 }
 add_action('widgets_init', 'arphabet_widgets_init');
 
@@ -292,3 +302,109 @@ function comment_validation_init()
     }
 }
 add_action('wp_footer', 'comment_validation_init');
+
+// zwraca alt z url obrazka
+
+function get_alt_from_img($img)
+{
+    $id = attachment_url_to_postid($img);
+    $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+    return $alt;
+}
+
+// Change Quantity Input
+
+add_action('woocommerce_after_quantity_input_field', 'silva_display_quantity_plus');
+
+function silva_display_quantity_plus()
+{
+    echo '<button type="button" class="plus" >+</button>';
+}
+
+add_action('woocommerce_before_quantity_input_field', 'silva_display_quantity_minus');
+
+function silva_display_quantity_minus()
+{
+    echo '<button type="button" class="minus" >-</button>';
+}
+
+// Trigger update quantity script
+
+add_action('wp_footer', 'silva_add_cart_quantity_plus_minus');
+
+function silva_add_cart_quantity_plus_minus()
+{
+
+    if (!is_product() && !is_cart()) return;
+
+    wc_enqueue_js("   
+           
+      $('form.cart,form.woocommerce-cart-form').on( 'click', 'button.plus, button.minus', function() {
+  
+        var qty = $(this).closest('.quantity').find('.qty');
+         var val = parseFloat(qty.val());
+         var max = parseFloat(qty.attr( 'max' ));
+         var min = parseFloat(qty.attr( 'min' ));
+         var step = parseFloat(qty.attr( 'step' ));
+ 
+         if ( $( this ).is( '.plus' ) ) {
+            if ( max && ( max <= val ) ) {
+               qty.val( max );
+            } else {
+               qty.val( val + step );
+            }
+            qty.trigger( 'change' );
+         } else {
+            if ( min && ( min >= val ) ) {
+               qty.val( min );
+            } else if ( val > 1 ) {
+               qty.val( val - step );
+            }
+         }
+ 
+      });
+        
+   ");
+}
+
+// Add theme support to product gallery
+
+add_action('after_setup_theme', 'yourtheme_setup');
+
+function yourtheme_setup()
+{
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+}
+
+// Replace add to cart button
+add_filter('woocommerce_loop_add_to_cart_link', 'replacing_add_to_cart_button', 10, 2);
+function replacing_add_to_cart_button($button, $product)
+{
+    $button_text = __("Jetz bestellen ", "woocommerce");
+    $button = '<a class="button" href="' . $product->get_permalink() . '">' . $button_text . '</a>';
+
+    return $button;
+}
+
+// disable woocommerce styles
+
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+// change sale to angebot
+
+add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
+function ds_change_sale_text()
+{
+    return '<span class="onsale">Angebot!</span>';
+}
+
+// remove breadcrambs in shop
+
+// add_action('init', 'my_remove_breadcrumbs');
+
+function my_remove_breadcrumbs()
+{
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+}

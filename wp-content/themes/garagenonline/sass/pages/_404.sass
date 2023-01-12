@@ -1,0 +1,54 @@
+$bg: #313942
+$ghost: $baseColor
+$heading: #e7ebf2
+
+*,
+*:after,
+*:before
+    box-sizing: border-box
+
+div.error
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+
+    h2
+        color: $heading
+        font-size: 60px
+        letter-spacing: .10em
+        margin: .025em 0
+        text-shadow: .05em .05em 0 rgba(0,0,0,.25)
+        white-space: nowrap
+        @media screen and ( min-width:1024px)
+            font-size: 120px
+
+        span
+            animation: spooky 2s alternate infinite linear
+            color: $ghost
+            display: inline-block
+
+    h3
+        color: $baseColor
+        margin-bottom: .40em
+        p
+            color: #ccc
+            margin-top: 0
+    a
+        border: 1px solid $baseColor
+        color: $baseColor
+        padding: 10px 20px
+        margin-top: 20px
+        font-weight: bold
+        transition: .3s linear
+        &:hover
+            background-color: $baseColor
+            color: white
+
+@keyframes spooky
+    from
+        transform: translatey(.15em) scaley(.95)
+
+    to
+        transform: translatey(-.15em)

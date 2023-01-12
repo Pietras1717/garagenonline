@@ -29,6 +29,16 @@ do_shortcode("[display_slider]");
                 </div>
             <?php endif ?>
         </div>
+        <!-- Sekcja z produktami -->
+        <div class="blog-posts">
+            <h3>UNSERE PRODUKTE</h3>
+            <?php echo do_shortcode('[products limit="9" columns="3" visibility="featured" ]'); ?>
+            <div class="home-link">
+                <div class="inner">
+                    <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>">Pozostałe produkty</a>
+                </div>
+            </div>
+        </div>
         <!-- wpisy blogowe -->
         <?php
         $recent_post = new WP_Query(array('post_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));

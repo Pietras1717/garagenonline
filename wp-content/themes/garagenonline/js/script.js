@@ -71,3 +71,13 @@ const triggerButton = document.querySelector("#show-mini-cart");
 triggerButton.addEventListener("click", function () {
   miniCart.classList.toggle("is-showing");
 });
+
+// load more button referenzen
+jQuery(".single-referenze").slice(0, 4).show();
+jQuery("#loadMore").on("click", function (e) {
+  e.preventDefault();
+  jQuery(".single-referenze:hidden").slice(0, 4).slideDown();
+  if (jQuery(".single-referenze:hidden").length == 0) {
+    jQuery("#loadMore").text("No more Content").addClass("noContent");
+  }
+});

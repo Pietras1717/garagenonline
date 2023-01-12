@@ -10,8 +10,10 @@
                     echo wp_title('Tag: ');
                 } else if (is_search()) {
                     echo 'Wyniki wyszukiwania dla : ' . get_query_var('s');
-                } else if (is_archive()) {
+                } else if (is_archive() && !is_shop()) {
                     echo wp_title('');
+                } else if (is_shop()) {
+                    echo "Onlineshop";
                 } else {
                     echo wp_title('');
                 }

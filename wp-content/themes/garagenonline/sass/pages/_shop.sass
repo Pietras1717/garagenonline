@@ -1,0 +1,54 @@
+.shop-page
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media screen and (min-width: 1024px)
+        flex-direction: row
+        align-items: flex-start
+        justify-content: space-between
+    #primary
+        order: -1
+        @media screen and (min-width: 1024px)
+            order: 2
+    main#main
+        padding: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media screen and (min-width: 1024px)
+            display: block
+            padding: 15px
+            p.woocommerce-result-count, form.woocommerce-ordering
+                text-align: right
+        select.orderby
+            padding: 10px 20px
+            border: 1px solid $baseColor
+            outline: none
+            margin: 5px 0
+        ul.products
+            justify-content: flex-end
+            li.product
+                @media screen and (min-width: 1024px)
+                    margin: 20px 0 20px 20px
+.wc-block-price-filter__controls
+    input
+        border-color: $baseColor
+        outline: none
+        &:focus
+            background-color: $baseColor
+            color: white
+
+.woocommerce-breadcrumb
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 20px
+    text-align: center
+    justify-content: center
+    @media screen and (min-width: 1024px)
+        text-align: right
+        justify-content: flex-end
+    a
+        color: black
+        font-weight: bold
+        &:hover
+            color: $baseColor
