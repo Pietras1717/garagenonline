@@ -1,0 +1,61 @@
+div.quantity,.woocommerce .button[name=add-to-cart]
+    display: none
+.wapf-wrapper
+    border-radius: 4px
+    border: 1px solid #ededed
+    padding: 15px 20px
+    margin-bottom: 20px
+.wapf-field-group
+    .step
+        display: none
+        &:first-child
+            display: flex
+.wapf_step_buttons
+    margin-bottom: 20px
+    overflow: hidden
+.wapf_btn_next
+    float: right !important
+.wapf-progress
+    position: relative
+    max-width: 450px
+    width: 100%
+    margin: 0 auto
+.wapf-progress:before,
+.wapf-progress-bar
+    content: ''
+    position: absolute
+    height: 3px
+    width: 100%
+    background: #ededed
+    top: 14px
+    left: 0
+.wapf-progress-steps
+    margin-bottom: 30px
+    overflow: hidden
+    counter-reset: step
+    display: flex
+    justify-content: space-between
+    div
+        position: relative
+        &:before
+            content: counter(step)
+            counter-increment: step
+            width: 30px
+            height: 30px
+            font-size: 16px
+            line-height: 30px
+            border-radius: 50%
+            text-align: center
+            display: block
+            font-size: 10px
+            background: #ededed
+        &.active
+            &:before
+                background: #f0632b
+                color: white
+.wapf-progress-bar
+    background: #f0632b
+    width: 0%
+.wapf img
+    width: 100%
+    height: auto

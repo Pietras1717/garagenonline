@@ -298,7 +298,7 @@ function comment_validation_init()
                 });
             });
         </script>
-<?php
+    <?php
     }
 }
 add_action('wp_footer', 'comment_validation_init');
@@ -407,4 +407,38 @@ function ds_change_sale_text()
 function my_remove_breadcrumbs()
 {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+}
+
+
+// Multi steps ACF PRO
+
+add_action('wapf_before_wrapper', 'wapf_before_wrapper');
+
+function wapf_before_wrapper($product)
+{
+    ?>
+    <div class="wapf-progress">
+        <div class="wapf-progress-bar"></div>
+        <div class="wapf-progress-steps"></div>
+    </div>
+<?php
+}
+
+add_action('wapf_before_product_totals', 'wapf_before_product_totals');
+
+function wapf_before_product_totals($product)
+{
+?>
+    <div class="wapf_step_buttons">
+        <button class="button wapf_btn_prev" style="display:none"><?php _e('Previous', 'sw-wapf'); ?></button>
+        <button class="button wapf_btn_next"><?php _e('Next', 'sw-wapf'); ?></button>
+    </div>
+<?php
+}
+
+
+
+if (is_product()) {
+
+    do_action('woocommerce_single_product_summary');
 }

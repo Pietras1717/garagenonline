@@ -1,0 +1,195 @@
+.product-page
+    #primary
+        main#main
+            padding: 0
+            .woocommerce-breadcrumb
+                @media screen and ( min-width: 768px )
+                    text-align: left
+                    justify-content: flex-start
+            .woocommerce-message
+                padding: 20px
+                background-color: $baseColor
+                color: white
+                font-size: 14px
+                a
+                    color: #ccc
+                    font-weight: bold
+                    transition: .3s linear
+                    &:hover
+                        color: red
+            div.product
+                display: flex
+                flex-direction: column
+                margin: 20px 0 0 0
+                overflow: hidden
+                @media screen and ( min-width: 768px )
+                    flex-direction: row
+                    flex-wrap: wrap
+                    justify-content: space-between
+                .onsale
+                    display: none
+                .woocommerce-product-gallery
+                    position: relative
+                    @media screen and ( min-width: 768px )
+                        flex-basis: 45%
+                        max-width: 600px
+                    figure
+                        div
+                            a
+                                img
+                                    width: 100%
+                                    height: auto
+                    ol
+                        display: flex
+                        flex-direction: row
+                        flex-wrap: wrap
+                        list-style: none
+                        margin: 10px 0
+                        li
+                            img
+                                width: 100%
+                                max-width: 100px
+                                height: auto
+                    .woocommerce-product-gallery__trigger
+                        position: absolute
+                        left: 0
+                        top: 0
+                        width: 50px
+                        height: 50px
+                        line-height: 50px
+                        font-size: 20px
+                        text-align: center
+                        background-color: rgba(0,0,0,0.1)
+                        z-index: 2
+                .summary
+                    display: flex
+                    flex-direction: column
+                    @media screen and ( min-width: 768px )
+                        flex-basis: 50%
+                        max-width: 600px
+                    h2.product_title
+                        background-color: $baseColor
+                        padding: 20px
+                        text-align: center
+                        text-transform: uppercase
+                        font-size: 16px
+                        color: white
+                        margin: 30px 0
+                        @media screen and ( min-width: 768px )
+                            margin: 0 0 30px 0
+                    p.price
+                        color: $baseColor
+                        margin-bottom: 10px
+                        font-size: 32px
+                        del
+                            bdi
+                                display: none
+                    .woocommerce-product-details__short-description
+                        font-size: 14px
+                        word-wrap: break-word
+                        hyphens: auto
+                        text-align: justify
+                        margin: 25px 0
+                    div.product_meta
+                        border-top: 1px solid #aaa
+                        font-size: 14px
+                        margin-bottom: 25px
+                        padding-top: 25px
+                        a
+                            color: $baseColor
+                        *
+                            margin: 5px 0
+                    form.cart
+                        margin-bottom: 25px
+                        div.quantity
+                            font-size: 16px
+                            button
+                                padding: 5px 10px
+                                border: 1px solid $baseColor
+                                color: $baseColor
+                                font-size: 16px
+                                font-weight: bold
+                                &:hover
+                                    background-color: $baseColor
+                                    color: white
+                            input
+                                padding: 5px 10px
+                                border: 1px solid $baseColor
+                                color: $baseColor
+                                font-size: 16px
+                                font-weight: bold
+                                width: 50px
+                                text-align: center
+                                margin: 0 5px
+                        button
+                            margin-top: 10px
+                            &[name="add-to-cart"]
+                                padding: 10px 20px
+                                background-color: black
+                                color: white
+                                font-size: 15px
+                                transition: .3s linear
+                            &:hover
+                                background-color: $baseColor
+                div.woocommerce-tabs
+                    @media screen and ( min-width: 768px )
+                        flex-basis: 100%
+                    ul
+                        display: flex
+                        flex-direction: row
+                        list-style: none
+                        flex-wrap: wrap
+                        li
+                            margin-right: 10px
+                            margin-bottom: 10px
+                            a
+                                display: block
+                                padding: 10px 20px
+                                color: black
+                                border: 1px solid $baseColor
+                                transition: .3s linear
+                                font-size: 13px
+                                cursor: pointer
+                                img
+                                    width: 100%
+                                    max-width: 480px
+                                &:hover
+                                    background-color: $baseColor
+                                    color: white
+                            &.active
+                                a
+                                    background-color: $baseColor
+                                    color: white
+                    .woocommerce-Tabs-panel
+                        margin: 20px 0
+                        font-size: 14px
+                        h2
+                            margin: 5px 0
+                            font-size: 16px
+                        *
+                            margin: 10px 0
+                        tr
+                            display: flex
+                            flex-direction: row
+                            flex-wrap: wrap
+                            td
+                                width: 260px
+                                margin: 10px
+                section.related
+                    @media screen and ( min-width: 768px )
+                        flex-basis: 100%
+                    h2
+                        color: $baseColor
+                        text-align: center
+                        margin-bottom: 30px
+                        margin-top: 20px
+                        font-size: 22px
+                        @media screen and ( min-width: 768px )
+                            font-size: 28px
+                            margin-bottom: 50px
+                    ul
+                        h2
+                            color: black
+                            font-size: 16px
+                            margin-top: 30px
+                            min-height: 120px
