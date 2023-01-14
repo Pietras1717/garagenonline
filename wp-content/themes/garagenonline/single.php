@@ -33,7 +33,8 @@ get_template_part('template-parts/page-header');
                         </div>
                     </div>
                     <div class="one-post">
-                        <?php comments_template(); ?>
+                        <?php //comments_template(); 
+                        ?>
                     </div>
                 </div>
             </div>

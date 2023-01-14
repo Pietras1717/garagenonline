@@ -1,0 +1,116 @@
+.woocommerce
+    form[name="checkout"]
+        border: 1px solid $baseColor
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        overflow: hidden
+        font-size: 14px
+        .woocommerce-account-fields
+            padding: 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+        table
+            display: flex
+            flex-direction: column
+            thead, tbody, tfoot
+                width: 100%
+                tr
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    margin-bottom: 10px
+                    td
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 0 5px 10px 0
+                        @media screen and ( min-width: 1024px )
+                            justify-content: flex-start
+                        .variation
+                            flex-basis: 100%
+                            margin: 20px 0
+                            font-size: 13px
+                            dt
+                                font-weight: bold
+                                &.variation-Na
+                                    opacity: 0
+                            dd
+                                margin-bottom: 5px
+                            @media screen and ( min-width: 768px )
+                                display: flex
+                                flex-wrap: wrap
+                                justify-content: space-between
+                                *
+                                    flex-basis: 48%
+            thead
+                tr
+                    padding: 10px 0
+            tbody, thead,tfoot
+                margin-bottom: 10px
+                border-bottom: 1px solid $baseColor
+        .woocommerce-error
+            padding: 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+            li
+                strong
+                    color: red
+        *
+            text-align: left
+            hyphens: unset
+            word-wrap: normal
+        h3
+
+            font-size: 15px
+            background-color: $baseColor
+            color: white
+            padding: 5px 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+                font-size: 16px
+        .woocommerce-billing-fields, .woocommerce-shipping-fields, .woocommerce-additional-fields, .woocommerce-checkout-review-order
+            padding: 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+            p.form-row
+                margin: 10px 0
+                display: flex
+                flex-direction: column
+                *
+                    width: 100%
+                    resize: none
+                label
+                    margin-bottom: 5px
+                    font-size: 15px
+                    font-weight: bold
+                    &.screen-reader-text
+                        display: none!important
+                input, select
+                    min-height: 40px
+                textarea
+                    min-height: 120px
+                b[role="presentation"]
+                    display: none!important
+            #payment
+                #place_order
+                    padding: 10px 20px
+                    background-color: black
+                    color: white
+                    font-size: 15px
+                    transition: .3s linear
+                    margin: 10px 0
+                    outline: none
+                    &:hover
+                        background-color: $baseColor
+                ul
+                    li
+                        margin: 10px 0
+    @media screen and ( min-width: 768px )
+        #customer_details
+            display: flex
+            justify-content: space-between
+            *
+                flex-basis: 48%
+        #order_review
+            *
+                max-width: 600px

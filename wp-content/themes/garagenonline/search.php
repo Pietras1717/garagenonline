@@ -8,18 +8,11 @@ get_template_part('template-parts/page-header');
         <?php get_template_part("/template-parts/breadcrumbs"); ?>
         <!-- wpisy blogowe -->
         <?php
-        $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 3, 'category_name' => get_queried_object()->name));
+        $s = get_search_query();
+        $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 1, 's' => $s));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts blog">
                 <div class="posts-container">
-                    <div class="category-info">
-                        <h2>
-                            <?php echo get_queried_object()->name ?>
-                        </h2>
-                        <p class="desc">
-                            <?php echo get_queried_object()->description ?>
-                        </p>
-                    </div>
                     <div class="posts blog">
                         <?php while ($recent_post->have_posts()) : $recent_post->the_post() ?>
                             <div class="single-post" onclick="window.location='<?php echo the_permalink() ?>'">
@@ -62,6 +55,8 @@ get_template_part('template-parts/page-header');
                     <?php dynamic_sidebar('blog_right'); ?>
                 </div>
             </div>
+        <?php else : ?>
+            <p>Brak wpisów dla tego słowa</p>
         <?php endif;
         wp_reset_postdata(); ?>
     </div>

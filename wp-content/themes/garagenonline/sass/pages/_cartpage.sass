@@ -1,0 +1,185 @@
+.single-page
+    .woocommerce
+        *
+            margin: 0
+        .woocommerce-message
+            padding: 20px
+            background-color: $baseColor
+            color: white
+            font-size: 14px
+            a
+                color: #ccc
+                font-weight: bold
+                transition: .3s linear
+                &:hover
+                    color: red
+        button
+            &[name="update_cart"]
+                padding: 10px 20px
+                background-color: black
+                color: white
+                font-size: 15px
+                transition: .3s linear
+                &:hover
+                    background-color: $baseColor
+        form.woocommerce-cart-form
+            table.shop_table_responsive.cart
+                border: 1px solid $baseColor
+                padding: 10px
+                border-radius: 10px
+                width: 100%
+                thead
+                    display: none
+                tr
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    margin-bottom: 10px
+                    border-bottom: 1px solid $baseColor
+                    td
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 0 5px 10px 0
+                        @media screen and ( min-width: 1024px )
+                            justify-content: flex-start
+                    td.product-remove
+                        flex-basis: 30px
+                        order: 0
+                        a
+                            text-align: center
+                            line-height: 30px
+                            background-color: red
+                            color: white
+                            border-radius: 50%
+                            display: block
+                            width: 30px
+                            height: 30px
+                    td.product-thumbnail
+                        flex-basis: 100px
+                        order: 1
+                        a
+                            img
+                                width: 100px
+                                height: auto
+                    td.product-price
+                        flex-basis: 100px
+                        order: 2
+                    td.product-quantity
+                        flex-basis: 150px
+                        order: 3
+                        div.quantity
+                            display: flex
+                            font-size: 16px
+                            button
+                                padding: 5px 10px
+                                border: 1px solid $baseColor
+                                color: $baseColor
+                                font-size: 16px
+                                font-weight: bold
+                                &:hover
+                                    background-color: $baseColor
+                                    color: white
+                            input
+                                padding: 5px 10px
+                                border: 1px solid $baseColor
+                                color: $baseColor
+                                font-size: 16px
+                                font-weight: bold
+                                width: 50px
+                                text-align: center
+                                margin: 0 5px
+                    td.product-subtotal
+                        flex-basis: 100px
+                        order: 4
+                    td.product-name
+                        flex-basis: 100%
+                        order: 5
+                        position: relative
+                        @media screen and ( min-width: 1024px )
+                            flex-basis: min-content
+                            flex-grow: 1
+                        a
+                            &:nth-child(1)
+                                color: black
+                                font-weight: bold
+                            &:nth-child(2)
+                                color: white
+                                font-size: 14px
+                                font-weight: bold
+                                background-color: black
+                                padding: 5px 10px
+                                width: 80px
+                        .variation
+                            flex-basis: 100%
+                            margin: 20px 0
+                            font-size: 13px
+                            dt
+                                font-weight: bold
+                                &.variation-Na
+                                    opacity: 0
+                            dd
+                                margin-bottom: 5px
+                            @media screen and ( min-width: 1024px )
+                                display: flex
+                                flex-wrap: wrap
+                                justify-content: space-between
+                                *
+                                    flex-basis: 48%
+
+        .cart-collaterals
+            margin: 30px 0
+            border: 1px solid $baseColor
+            border-radius: 10px
+            max-width: 600px
+            h2
+                font-size: 15px
+                background-color: $baseColor
+                color: white
+                padding: 5px 10px
+                border-top-left-radius: 10px
+                border-top-right-radius: 10px
+                @media screen and ( min-width: 1024px )
+                    padding: 10px 10px
+                    font-size: 16px
+            table
+                padding: 5px 10px
+                font-size: 14px
+                border-bottom: 1px solid $baseColor
+                width: 100%
+                tr
+                    margin-bottom: 10px
+                    display: flex
+                    justify-content: space-between
+                    td
+                        &:nth-child(1)
+                            flex-basis: 30%
+                        &:nth-child(2)
+                            flex-basis: calc( 100% - 30% - 10px)
+                            text-align: right
+                            *
+                                text-align: right
+            .wc-proceed-to-checkout
+                padding: 5px 0
+                margin: 10px 0
+                a
+                    padding: 10px 20px
+                    background-color: black
+                    color: white
+                    font-size: 15px
+                    transition: .3s linear
+                    margin-left: 10px
+                    &:hover
+                        background-color: $baseColor
+    .return-to-shop
+        a
+            padding: 10px 20px
+            background-color: black
+            color: white
+            font-size: 15px
+            transition: .3s linear
+            margin: 10px 0
+        &:hover
+            background-color: $baseColor
+    .cart-empty
+        margin: 20px 0

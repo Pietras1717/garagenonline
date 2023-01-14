@@ -3,8 +3,8 @@ div.quantity,.woocommerce .button[name=add-to-cart]
 .wapf-wrapper
     border-radius: 4px
     border: 1px solid #ededed
-    padding: 15px 20px
-    margin-bottom: 20px
+    padding: 15px 0px!important
+    margin: 0 0 20px 0!important
 .wapf-field-group
     .step
         display: none
@@ -13,6 +13,17 @@ div.quantity,.woocommerce .button[name=add-to-cart]
 .wapf_step_buttons
     margin-bottom: 20px
     overflow: hidden
+    button
+        padding: 5px 10px
+        font-size: 14px
+        border: 1px solid $baseColor
+        color: $baseColor
+        cursor: pointer
+        transition: .3s linear
+        background-color: white
+        &:hover
+            background-color: $baseColor
+            color: white
 .wapf_btn_next
     float: right !important
 .wapf-progress
@@ -24,7 +35,7 @@ div.quantity,.woocommerce .button[name=add-to-cart]
 .wapf-progress-bar
     content: ''
     position: absolute
-    height: 3px
+    height: 0px
     width: 100%
     background: #ededed
     top: 14px
@@ -34,8 +45,9 @@ div.quantity,.woocommerce .button[name=add-to-cart]
     overflow: hidden
     counter-reset: step
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
     div
+        margin: 0 5px 5px 0
         position: relative
         &:before
             content: counter(step)
@@ -51,11 +63,46 @@ div.quantity,.woocommerce .button[name=add-to-cart]
             background: #ededed
         &.active
             &:before
-                background: #f0632b
+                background: $baseColor
                 color: white
 .wapf-progress-bar
-    background: #f0632b
+    background: $baseColor
     width: 0%
 .wapf img
     width: 100%
     height: auto
+
+.wichtig
+    .wapf-field-input
+        color: red
+
+.wapf-swatch--image.wapf-checked
+    border: 3px solid green!important
+
+.wapf-field-label.wapf--above label
+    background-color: black
+    color: white
+    width: 100%
+    padding: 10px
+    margin-bottom: 10px
+.wapf-field-description
+    margin: 10px 0
+input.wapf-input
+    padding: 5px
+    font-size: 15px
+    border: 1px solid $baseColor
+    outline: none
+    resize: none
+.wapf-field-input textarea
+    padding: 5px
+    font-size: 15px
+    border: 1px solid $baseColor
+    outline: none
+    resize: none
+    min-height: 80px
+.wapf-color.wapf--circle
+    border: 1px solid black
+.wapf-field-container
+    padding: 10px!important
+    @media screen and ( min-width:768px  )
+        padding: 20px!important

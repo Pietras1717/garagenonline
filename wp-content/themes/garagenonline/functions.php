@@ -382,7 +382,7 @@ function yourtheme_setup()
 add_filter('woocommerce_loop_add_to_cart_link', 'replacing_add_to_cart_button', 10, 2);
 function replacing_add_to_cart_button($button, $product)
 {
-    $button_text = __("Jetz bestellen ", "woocommerce");
+    $button_text = __("Jetzt bestellen ", "woocommerce");
     $button = '<a class="button" href="' . $product->get_permalink() . '">' . $button_text . '</a>';
 
     return $button;
@@ -430,15 +430,8 @@ function wapf_before_product_totals($product)
 {
 ?>
     <div class="wapf_step_buttons">
-        <button class="button wapf_btn_prev" style="display:none"><?php _e('Previous', 'sw-wapf'); ?></button>
-        <button class="button wapf_btn_next"><?php _e('Next', 'sw-wapf'); ?></button>
+        <button class="button wapf_btn_prev" style="display:none"><?php _e('Früher', 'sw-wapf'); ?></button>
+        <button class="button wapf_btn_next"><?php _e('Nächste', 'sw-wapf'); ?></button>
     </div>
 <?php
-}
-
-
-
-if (is_product()) {
-
-    do_action('woocommerce_single_product_summary');
 }

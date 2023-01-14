@@ -1,0 +1,71 @@
+.woocommerce
+    *
+        text-align: left
+        hyphens: unset
+        word-wrap: normal
+    .woocommerce-thankyou-order-received
+        margin: 10px 0
+    .woocommerce-thankyou-order-details
+        li
+            margin: 5px 0
+    section.woocommerce-order-details
+        margin: 30px 0
+        h2
+            font-size: 15px
+            background-color: $baseColor
+            color: white
+            padding: 5px 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+                font-size: 16px
+        table.order_details
+            display: flex
+            flex-direction: column
+            thead, tbody, tfoot
+                width: 100%
+                tr
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    margin-bottom: 10px
+                    td
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 0 5px 10px 0
+                        a
+                            color: $baseColor
+                        @media screen and ( min-width: 1024px )
+                            justify-content: flex-start
+                        .wc-item-meta
+                            flex-basis: 100%
+                            margin: 20px 0
+                            font-size: 13px
+                            dt
+                                font-weight: bold
+                                &.variation-Na
+                                    opacity: 0
+                            dd
+                                margin-bottom: 5px
+                            @media screen and ( min-width: 768px )
+                                display: flex
+                                flex-wrap: wrap
+                                justify-content: space-between
+                                *
+                                    flex-basis: 48%
+            thead
+                tr
+                    padding: 10px 0
+            tbody, thead,tfoot
+                margin-bottom: 10px
+                border-bottom: 1px solid $baseColor
+    .woocommerce-column
+        margin: 20px 0
+        h2
+            font-size: 15px
+            background-color: $baseColor
+            color: white
+            padding: 5px 10px
+            @media screen and ( min-width: 768px )
+                padding: 20px
+                font-size: 16px

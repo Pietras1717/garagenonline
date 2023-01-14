@@ -8,7 +8,7 @@ get_template_part('template-parts/page-header');
         <?php get_template_part("/template-parts/breadcrumbs"); ?>
         <!-- wpisy blogowe -->
         <?php
-        $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 1, 'tag' => get_queried_object()->name));
+        $recent_post = new WP_Query(array('post_type' => 'post', 'post_per_page' => 3, 'tag' => get_queried_object()->name));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts blog">
                 <div class="posts-container">
