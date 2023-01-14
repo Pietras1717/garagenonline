@@ -32,10 +32,10 @@ do_shortcode("[display_slider]");
         <!-- Sekcja z produktami -->
         <div class="blog-posts">
             <h3>UNSERE PRODUKTE</h3>
-            <?php echo do_shortcode('[products limit="9" columns="3" visibility="featured" ]'); ?>
+            <?php echo do_shortcode('[products limit="8" columns="3" visibility="featured" ]'); ?>
             <div class="home-link">
                 <div class="inner">
-                    <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>">Pozostałe produkty</a>
+                    <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>">Andere Produkte</a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ do_shortcode("[display_slider]");
         $recent_post = new WP_Query(array('post_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts">
-                <h3>OSTATNIE WPISY NA NASZYM BLOGU</h3>
+                <h3>NEUESTE BEITRÄGE IN UNSEREM BLOG</h3>
                 <div class="posts-container">
                     <div class="posts">
                         <?php while ($recent_post->have_posts()) : $recent_post->the_post() ?>
@@ -75,7 +75,7 @@ do_shortcode("[display_slider]");
                 </div>
                 <div class="home-link">
                     <div class="inner">
-                        <a href="<?php echo get_post_type_archive_link('post') ?>">Przejdź na blog</a>
+                        <a href="<?php echo get_post_type_archive_link('post') ?>">Blog</a>
                     </div>
                 </div>
             </div>
