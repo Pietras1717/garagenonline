@@ -10,28 +10,28 @@
                 <nav class="footer-menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                Features
+                            <a href="/agb">
+                                Agb
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Sitemap
+                            <a href="/montagefilme">
+                                Montagefilme
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Checkout
+                            <a href="/montageanleitungen">
+                                Montageanleitungen
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Contact us
+                            <a href="/zahlungsmoglichkeiten">
+                                Zahlungsmöglichkeiten
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                About us
+                            <a href="/uber-uns">
+                                Über Uns
                             </a>
                         </li>
                     </ul>
@@ -42,28 +42,28 @@
                 <nav class="footer-menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                Features
+                            <a href="/disclaimer">
+                                Disclaimer
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Sitemap
+                            <a href="/lieferbedingungen">
+                                Lieferbedingungen
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Checkout
+                            <a href="/lieferzeiten">
+                                Lieferzeiten
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Contact us
+                            <a href="/haufig-gestelle-fragen">
+                                Häufig gestelle fragen
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                About us
+                            <a href="/datenschutzerklarung">
+                                Datenschutzerklärung
                             </a>
                         </li>
                     </ul>
@@ -74,28 +74,28 @@
                 <nav class="footer-menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                Features
+                            <a href="/">
+                                Startseite
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Sitemap
+                            <a href="/referenzen">
+                                Referenzen
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Checkout
+                            <a href="/blog">
+                                Blog
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Contact us
+                            <a href="/mein-konto">
+                                Mein konto
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                About us
+                            <a href="/kontakt">
+                                Kontakt
                             </a>
                         </li>
                     </ul>
