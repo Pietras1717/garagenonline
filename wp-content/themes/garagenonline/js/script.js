@@ -170,3 +170,24 @@ jQuery(function ($) {
     return event.key != "Enter";
   });
 });
+
+// add img full screen function
+
+jQuery(".wapf-field-input > img, .woocommerce-tabs  img").on(
+  "click",
+  function () {
+    const src = jQuery(this).attr("src");
+    window.open(src, "_blank");
+  }
+);
+
+// scroll to top of section
+
+jQuery(".wapf_btn_prev, .wapf_btn_next").on("click", function (e) {
+  jQuery("html").animate(
+    {
+      scrollTop: jQuery(".product_title").offset().top,
+    },
+    500 //speed
+  );
+});

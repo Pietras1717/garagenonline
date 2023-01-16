@@ -435,3 +435,9 @@ function wapf_before_product_totals($product)
     </div>
 <?php
 }
+
+// Checkout page add additional info
+
+add_action('woocommerce_after_checkout_form', function () {
+    echo '<div>tutaj dane które chce Pan Henryk</div>';
+});
