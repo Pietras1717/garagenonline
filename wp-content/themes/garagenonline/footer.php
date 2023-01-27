@@ -105,7 +105,7 @@
                 <h3>Store information</h3>
                 <div class="information-block">
                     <div class="single-information">
-                        <i class="fa fa-location-pin"></i><span>60 29th Street San Francisco, CA 94110 507-Union Trade Center, United States of America</span>
+                        <i class="fa fa-location-pin"></i><span>Großbeerenstr.2-10, G1, 12107 Berlin, Niemcy</span>
                     </div>
                     <div class="single-information">
                         <i class="fa fa-phone"></i><a href="tel:03096615487">030 / 966 15 487</a>

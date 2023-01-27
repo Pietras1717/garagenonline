@@ -45,6 +45,7 @@ if (!current_user_can('manage_options')) {
 function filter_plugin_updates($value)
 {
     unset($value->response['advanced-custom-fields-pro/acf.php']);
+    unset($value->response['uk-cookie-consent/uk-cookie-consent.php']);
     return $value;
 }
 add_filter('site_transient_update_plugins', 'filter_plugin_updates');
@@ -382,7 +383,7 @@ function yourtheme_setup()
 add_filter('woocommerce_loop_add_to_cart_link', 'replacing_add_to_cart_button', 10, 2);
 function replacing_add_to_cart_button($button, $product)
 {
-    $button_text = __("Jetzt bestellen ", "woocommerce");
+    $button_text = __("Konfigurieren ", "woocommerce");
     $button = '<a class="button" href="' . $product->get_permalink() . '">' . $button_text . '</a>';
 
     return $button;
@@ -430,7 +431,7 @@ function wapf_before_product_totals($product)
 {
 ?>
     <div class="wapf_step_buttons">
-        <button class="button wapf_btn_prev" style="display:none"><?php _e('Früher', 'sw-wapf'); ?></button>
+        <button class="button wapf_btn_prev" style="display:none"><?php _e('Zurück', 'sw-wapf'); ?></button>
         <button class="button wapf_btn_next"><?php _e('Nächste', 'sw-wapf'); ?></button>
     </div>
 <?php
@@ -438,6 +439,318 @@ function wapf_before_product_totals($product)
 
 // Checkout page add additional info
 
-add_action('woocommerce_after_checkout_form', function () {
-    echo '<div>tutaj dane które chce Pan Henryk</div>';
-});
+// add_action('woocommerce_after_checkout_form', function () {
+//     echo '<div>tutaj dane które chce Pan Henryk</div>';
+// });
+
+// SITEMAP GENERATOR
+add_action("publish_post", "eg_create_sitemap");
+add_action("publish_page", "eg_create_sitemap");
+function eg_create_sitemap()
+{
+    $postsForSitemap = get_posts(array(
+        'numberposts' => -1,
+        'orderby' => 'modified',
+        'post_type' => array('post', 'page'),
+        'order' => 'DESC'
+    ));
+    $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
+    $sitemap .= '<?xml-stylesheet type="text/xsl" href="sitemap-style.xsl"?>';
+    $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    foreach ($postsForSitemap as $post) {
+        setup_postdata($post);
+        $postdate = explode(" ", $post->post_modified);
+        $sitemap .= '<url>' .
+            '<loc>' . get_permalink($post->ID) . '</loc>' .
+            '<priority>1</priority>' .
+            '<lastmod>' . $postdate[0] . '</lastmod>' .
+            '<changefreq>daily</changefreq>' .
+            '</url>';
+    }
+    $sitemap .= '</urlset>';
+    $fp = fopen(ABSPATH . "sitemap.xml", 'w');
+    fwrite($fp, $sitemap);
+    fclose($fp);
+}
+
+// change label
+
+add_filter('woocommerce_default_address_fields', 'change_label', 9999);
+
+function change_label($fields)
+{
+
+    $fields['address_1']['label'] = 'Ulica i numer';
+
+    return $fields;
+}
+
+// change fields - remove
+
+function wc_remove_checkout_fields($fields)
+{
+    // Billing fields
+    unset($fields['billing']['billing_state']);
+    return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'wc_remove_checkout_fields');
+
+
+// acf tables by pietras17
+
+function wapf_add_look_up_tables()
+{
+
+    $tables = array();
+    // NEBENEINGANGSTÜR ALU NACH MASS AUS ISO 40 SEKTIONALTOR SANDWICHPANEELEN - start
+    $tables['nebeneingangstur_alu_1A'] = array(
+        '0.9'        => array(
+            '2.0'    => 0,
+            '2.1'    => 10,
+            '2.2'    => 21,
+            '2.3'    => 67,
+            '2.4'    => 78
+        ),
+        '1.0'        => array(
+            '2'    => 32,
+            '2.1'    => 39,
+            '2.2'    => 46,
+            '2.3'    => 96,
+            '2.4'    => 110
+        ),
+        '1.1'        => array(
+            '2'    => 60,
+            '2.1'    => 67,
+            '2.2'    => 74,
+            '2.3'    => 124,
+            '2.4'    => 139
+        ),
+        '1.2'        => array(
+            '2'    => 82,
+            '2.1'    => 96,
+            '2.2'    => 103,
+            '2.3'    => 153,
+            '2.4'    => 164
+        ),
+        '1.3'        => array(
+            '2'    => 114,
+            '2.1'    => 124,
+            '2.2'    => 135,
+            '2.3'    => 178,
+            '2.4'    => 192
+        )
+    );
+    $tables['nebeneingangstur_alu_1B'] = array(
+        '0.9'        => array(
+            '2'    => 32,
+            '2.1'    => 42,
+            '2.2'    => 49,
+            '2.3'    => 92,
+            '2.4'    => 114
+        ),
+        '1'        => array(
+            '2'    => 67,
+            '2.1'    => 78,
+            '2.2'    => 85,
+            '2.3'    => 135,
+            '2.4'    => 146
+        ),
+        '1.1'        => array(
+            '2'    => 103,
+            '2.1'    => 117,
+            '2.2'    => 124,
+            '2.3'    => 171,
+            '2.4'    => 182
+        ),
+        '1.2'        => array(
+            '2'    => 142,
+            '2.1'    => 149,
+            '2.2'    => 157,
+            '2.3'    => 207,
+            '2.4'    => 221
+        ),
+        '1.3'        => array(
+            '2'    => 178,
+            '2.1'    => 185,
+            '2.2'    => 196,
+            '2.3'    => 242,
+            '2.4'    => 257
+        )
+    );
+    $tables['nebeneingangstur_alu_2A'] = array(
+        '0.9'        => array(
+            '2'    => 264,
+            '2.1'    => 271,
+            '2.2'    => 278,
+            '2.3'    => 328,
+            '2.4'    => 339
+        ),
+        '1'        => array(
+            '2'    => 289,
+            '2.1'    => 299,
+            '2.2'    => 310,
+            '2.3'    => 353,
+            '2.4'    => 467
+        ),
+        '1.1'        => array(
+            '2'    => 321,
+            '2.1'    => 328,
+            '2.2'    => 335,
+            '2.3'    => 385,
+            '2.4'    => 396
+        ),
+        '1.2'        => array(
+            '2'    => 342,
+            '2.1'    => 353,
+            '2.2'    => 360,
+            '2.3'    => 410,
+            '2.4'    => 424
+        ),
+        '1.3'        => array(
+            '2'    => 374,
+            '2.1'    => 385,
+            '2.2'    => 392,
+            '2.3'    => 435,
+            '2.4'    => 453
+        )
+    );
+    $tables['nebeneingangstur_alu_2B'] = array(
+        '0.9'        => array(
+            '2'    => 285,
+            '2.1'    => 299,
+            '2.2'    => 307,
+            '2.3'    => 349,
+            '2.4'    => 364
+        ),
+        '1'        => array(
+            '2'    => 321,
+            '2.1'    => 332,
+            '2.2'    => 339,
+            '2.3'    => 389,
+            '2.4'    => 399
+        ),
+        '1.1'        => array(
+            '2'    => 360,
+            '2.1'    => 367,
+            '2.2'    => 374,
+            '2.3'    => 424,
+            '2.4'    => 435
+        ),
+        '1.2'        => array(
+            '2'    => 396,
+            '2.1'    => 403,
+            '2.2'    => 414,
+            '2.3'    => 456,
+            '2.4'    => 467
+        ),
+        '1.3'        => array(
+            '2'    => 431,
+            '2.1'    => 439,
+            '2.2'    => 449,
+            '2.3'    => 496,
+            '2.4'    => 510
+        )
+    );
+
+    // NEBENEINGANGSTÜR ALU NACH MASS AUS ISO 40 SEKTIONALTOR SANDWICHPANEELEN - end
+
+    // Zweiflügeltor Alu Nach Mass Aus Iso 40 Sektionaltor Sandwichpaneelen - start
+
+    $tables['zweiflugeltor_alu_1A'] = array(
+        '2'        => array(
+            '2'    => 0,
+            '2.125'    => 79,
+            '2.250'    => 140,
+            '2.275'    => 200,
+            '2.500'    => 261
+        ),
+        '2.100'        => array(
+            '2'    => 15,
+            '2.125'    => 93,
+            '2.250'    => 150,
+            '2.275'    => 207,
+            '2.500'    => 272
+        ),
+        '2.200'        => array(
+            '2'    => 25,
+            '2.125'    => 104,
+            '2.250'    => 161,
+            '2.275'    => 218,
+            '2.500'    => 275
+        ),
+        '2.300'        => array(
+            '2'    => 43,
+            '2.125'    => 115,
+            '2.250'    => 268,
+            '2.275'    => 229,
+            '2.500'    => 286
+        ),
+        '2.400'        => array(
+            '2'    => 54,
+            '2.125'    => 133,
+            '2.250'    => 190,
+            '2.275'    => 247
+        ),
+        '2.500'        => array(
+            '2.0'    => 79,
+            '2.125'    => 158,
+            '2.250'    => 218
+        ),
+        '2.600'        => array(
+            '2'    => 133,
+            '2.125'    => 204,
+            '2.250'    => 261
+        )
+    );
+    $tables['zweiflugeltor_alu_1B'] = array(
+        '2'        => array(
+            '2'    => 147,
+            '2.125'    => 229,
+            '2.250'    => 304,
+            '2.275'    => 379,
+            '2.500'    => 454
+        ),
+        '2.100'        => array(
+            '2'    => 165,
+            '2.125'    => 247,
+            '2.250'    => 318,
+            '2.275'    => 390,
+            '2.500'    => 461
+        ),
+        '2.200'        => array(
+            '2'    => 179,
+            '2.125'    => 261,
+            '2.250'    => 336,
+            '2.275'    => 411,
+            '2.500'    => 486
+        ),
+        '2.300'        => array(
+            '2'    => 193,
+            '2.125'    => 275,
+            '2.250'    => 347,
+            '2.275'    => 418,
+            '2.500'    => 490
+        ),
+        '2.400'        => array(
+            '2'    => 207,
+            '2.125'    => 290,
+            '2.250'    => 365,
+            '2.275'    => 440
+        ),
+        '2.500'        => array(
+            '2.0'    => 243,
+            '2.125'    => 329,
+            '2.250'    => 400
+        ),
+        '2.600'        => array(
+            '2'    => 304,
+            '2.125'    => 386,
+            '2.250'    => 457
+        )
+    );
+    // Zweiflügeltor Alu Nach Mass Aus Iso 40 Sektionaltor Sandwichpaneelen - end
+
+    return $tables;
+}
+
+add_filter('wapf/lookup_tables', 'wapf_add_look_up_tables');

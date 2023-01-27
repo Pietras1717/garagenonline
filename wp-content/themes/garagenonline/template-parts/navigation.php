@@ -22,8 +22,11 @@
             ?>
             <div class="woocommerce-menu">
                 <?php return_myaccount_menu() ?>
-                <button id="show-mini-cart" class="show-mini-cart"><i class="fa fa-shopping-bag"></i> <?php echo number_format(WC()->cart->cart_contents_total, 2) ?> (<?php echo WC()->cart->get_cart_contents_count() ?>)</button>
+                <button id="show-mini-cart" class="show-mini-cart"><i class="fa fa-shopping-bag"></i> <?php echo number_format(WC()->cart->total, 2) ?> (<?php echo WC()->cart->get_cart_contents_count() ?>)</button>
             </div>
         </div>
     </div>
 </div>
+
+<?php // echo number_format(WC()->cart->cart_contents_total, 2) 
+?>

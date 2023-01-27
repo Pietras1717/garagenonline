@@ -32,7 +32,7 @@ do_shortcode("[display_slider]");
         <!-- Sekcja z produktami -->
         <div class="blog-posts">
             <h3>UNSERE PRODUKTE</h3>
-            <?php echo do_shortcode('[products limit="8" columns="3" visibility="featured" ]'); ?>
+            <?php echo do_shortcode('[products limit="8" columns="3" visibility="featured" orderby="date" order="ASC"]'); ?>
             <div class="home-link">
                 <div class="inner">
                     <a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>">Andere Produkte</a>

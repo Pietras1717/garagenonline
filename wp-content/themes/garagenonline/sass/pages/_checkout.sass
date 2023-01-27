@@ -18,6 +18,10 @@
                     flex-wrap: wrap
                     justify-content: space-between
                     margin-bottom: 10px
+                    &.order-total
+                        td
+                            display: flex
+                            flex-direction: row
                     td
                         display: flex
                         flex-direction: column
@@ -91,6 +95,7 @@
                 b[role="presentation"]
                     display: none!important
             #payment
+                margin: 20px 0
                 #place_order
                     padding: 10px 20px
                     background-color: black
