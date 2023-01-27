@@ -200,6 +200,8 @@ jQuery(".wapf-field-input > img, .woocommerce-tabs  img").on(
 
 // change step in inputs
 
-jQuery(
-  '[data-field-id="63c07268ec22a"], [data-field-id="63c072fea4fdf"], [data-field-id="63c1dca3b6284"], [data-field-id="63c1dca3b62e9"], [data-field-id="63c1ed80d8e04"], [data-field-id="63c1ed80d8e70"], [data-field-id="63c2692742883"], [data-field-id="63c26927428be"], [data-field-id="63c26e99e5568"], [data-field-id="63c26e99e557d"], [data-field-id="63c1e6a2dd739"], [data-field-id="63c1e6a2dd75d"], [data-field-id="63c1cb33652bf"], [data-field-id="63c1cb33652ec"]'
-).attr("step", "0.01");
+jQuery("input[data-field-id]").attr("step", "0.01");
+
+// jQuery(
+//   '[data-field-id="63c07268ec22a"], [data-field-id="63c072fea4fdf"], [data-field-id="63c1dca3b6284"], [data-field-id="63c1dca3b62e9"], [data-field-id="63c1ed80d8e04"], [data-field-id="63c1ed80d8e70"], [data-field-id="63c2692742883"], [data-field-id="63c26927428be"], [data-field-id="63c26e99e5568"], [data-field-id="63c26e99e557d"], [data-field-id="63c1e6a2dd739"], [data-field-id="63c1e6a2dd75d"], [data-field-id="63c1cb33652bf"], [data-field-id="63c1cb33652ec"]'
+// ).attr("step", "0.01");

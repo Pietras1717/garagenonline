@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.info-message {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  visibility: hidden;
+}
+
+.info-message p strong::first-letter {
+  text-transform: uppercase;
+}
+
+.info-message.error {
+  background: #f44336;
+}
+
+.info-message.success {
+  background: #04AA6D;
+}
+
+.info-message.info {
+  background: #2196F3;
+}
+
+.info-message.warning {
+  background: #ff9800;
+}
+
+.info-message .closebtn {
+  font-size: 20px;
+  line-height: 20px;
+  width: 30px;
+  height: 30px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.info-message .closebtn:hover {
+  background-color: white;
+  color: black;
+}
+
+#frmGoogleReviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.about-plugin {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+  margin: 10px 0;
+}
+
+.left-column {
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+}
+
+.right-column {
+  width: 35%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 10px 10px 10px;
+}
+
+.form-group {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form-group>* {
+  margin-right: 10px;
+}
+
+.greviews_save_changes {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.greviews_save_changes:hover {
+  background-color: white;
+  color: black;
+}
+
+input {
+  min-width: 300px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+.about-plugin div {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+  #frmSettings {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  #frmSettings .left-column,
+  #frmSettings .right-column {
+    margin: 10px 0;
+    width: 100%;
+  }
+}

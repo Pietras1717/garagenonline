@@ -1,0 +1,109 @@
+.google-reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+}
+
+.google-reviews .heading {
+  background-color: rgb(60, 100, 173);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.google-reviews .heading h3 {
+  text-align: center;
+  color: white;
+}
+
+.google-reviews .reviews-logo {
+  max-width: 280px;
+  height: auto;
+  margin: 0;
+}
+
+.google-reviews .reviews-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 620px) {
+  .google-reviews .reviews-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.google-reviews .reviews-list .single-reviews {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #bbb;
+  max-width: 280px;
+}
+
+@media screen and (min-width: 620px) {
+  .google-reviews .reviews-list .single-reviews {
+    margin: 0 30px 30px 0;
+  }
+}
+
+.google-reviews .reviews-list .single-reviews * {
+  margin: 0;
+}
+
+.google-reviews .reviews-list .single-reviews .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.google-reviews .reviews-list .single-reviews .user img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.google-reviews .reviews-list .single-reviews .user p {
+  font-weight: bold;
+}
+
+.google-reviews .reviews-list .single-reviews .rate {
+  margin: 10px 0;
+}
+
+.google-reviews .reviews-list .single-reviews .description {
+  word-wrap: break-word;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  font-size: 14px;
+}
+
+.google-reviews .reviews-list .single-reviews .time {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 13px;
+}
