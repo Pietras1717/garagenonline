@@ -41,7 +41,7 @@ do_shortcode("[display_slider]");
         </div>
         <!-- wpisy blogowe -->
         <?php
-        $recent_post = new WP_Query(array('post_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
+        $recent_post = new WP_Query(array('posts_per_page' => '3', 'orderby' => 'date', 'order' => 'DESC'));
         if ($recent_post->have_posts()) : ?>
             <div class="blog-posts">
                 <h3>NEUESTE BEITRÄGE IN UNSEREM BLOG</h3>
@@ -67,7 +67,7 @@ do_shortcode("[display_slider]");
                                 <div class="info">
                                     <img class="avatar" src="https://pietras17.ct8.pl/wp-content/uploads/2023/01/cropped-favicon.webp" alt="Henryk Filipowicz" srcset="">
                                     <span class="author">Garagenonline</span>
-                                    <span class="data"><?php echo get_the_date('Y-m-d') ?></span>
+                                    <!-- <span class="data"><?php echo get_the_date('Y-m-d') ?></span> -->
                                 </div>
                             </div>
                         <?php endwhile ?>

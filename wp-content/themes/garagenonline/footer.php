@@ -3,94 +3,30 @@
         <section class="footer-wrapper">
             <div class="footer-column first">
                 <a href="/"><img class="logo" src="https://pietras17.ct8.pl/wp-content/uploads/2023/01/garagen_logo_white.png" alt="Garagentore aus Polen"></a>
-                <p class="info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab pariatur vel laboriosam provident eaque temporibus harum placeat aspernatur, dolorem aliquam? Nostrum quia vero optio ex fugit deserunt delectus et id.</p>
+                <p class="info-text">Jetzt online bestellen. Lassen Sie Ihre Wunsch Garagentor, Fertiggaragen Montagefertig zu Ihnen nach Hause kostenlos liefern.</p>
             </div>
             <div class="footer-column">
-                <h3>Our Company</h3>
+                <!--<h3>Our Company</h3>-->
                 <nav class="footer-menu">
                     <ul>
-                        <li>
-                            <a href="/agb">
-                                Agb
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/montagefilme">
-                                Montagefilme
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/montageanleitungen">
-                                Montageanleitungen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/zahlungsmoglichkeiten">
-                                Zahlungsmöglichkeiten
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/uber-uns">
-                                Über Uns
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer-column">
-                <h3>Information</h3>
-                <nav class="footer-menu">
-                    <ul>
-                        <li>
-                            <a href="/disclaimer">
-                                Disclaimer
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/lieferbedingungen">
-                                Lieferbedingungen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/lieferzeiten">
-                                Lieferzeiten
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/haufig-gestelle-fragen">
-                                Häufig gestelle fragen
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datenschutzerklarung">
-                                Datenschutzerklärung
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer-column">
-                <h3>Static Block</h3>
-                <nav class="footer-menu">
-                    <ul>
-                        <li>
-                            <a href="/">
-                                Startseite
-                            </a>
-                        </li>
-                        <li>
+						<li>
                             <a href="/referenzen">
                                 Referenzen
                             </a>
                         </li>
-                        <li>
-                            <a href="/blog">
-                                Blog
+						 <li>
+                            <a href="/haufig-gestelle-fragen">
+                                Häufig gestellte Fragen
                             </a>
                         </li>
-                        <li>
-                            <a href="/mein-konto">
-                                Mein konto
+						<li>
+                            <a href="/uber-uns">
+                                Über Uns
+                            </a>
+                        </li>
+						<li>
+                            <a href="/blog">
+                                Blog
                             </a>
                         </li>
                         <li>
@@ -101,8 +37,77 @@
                     </ul>
                 </nav>
             </div>
+            <div class="footer-column">
+                <!--<h3>Information</h3>-->
+                <nav class="footer-menu">
+                    <ul>
+                        <li>
+                            <a href="/lieferbedingungen">
+                                Lieferbedingungen
+                            </a>
+                        </li>
+						<li>
+                            <a href="/zahlungsmoglichkeiten">
+                                Zahlungsmöglichkeiten
+                            </a>
+                        </li>
+						<li>
+                            <a href="/lieferzeiten">
+                                Lieferzeiten
+                            </a>
+                        </li>
+						<li>
+                            <a href="/agb">
+                                AGB
+                            </a>
+                        </li>
+						<li>
+                            <a href="/mein-konto">
+                                Mein Konto
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <!--<h3>Static Block</h3>-->
+                <nav class="footer-menu">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                Startseite
+                            </a>
+                        </li>
+						<li>
+                            <a href="/montageanleitungen">
+                                Montageanleitungen
+                            </a>
+                        </li>
+						<li>
+                            <a href="/montagefilme">
+                                Montagefilme
+                            </a>
+                        </li>
+						<li>
+                            <a href="/datenschutzerklarung">
+                                Datenschutzerklärung
+                            </a>
+                        </li>
+						<li>
+                            <a href="/disclaimer">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/impressum">
+                                Impressum
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <div class="footer-column last">
-                <h3>Store information</h3>
+                <!--<h3>Store information</h3>-->
                 <div class="information-block">
                     <div class="single-information">
                         <i class="fa fa-location-pin"></i><span>Großbeerenstr.2-10, G1, 12107 Berlin, Niemcy</span>

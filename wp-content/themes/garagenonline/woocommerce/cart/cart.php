@@ -186,35 +186,35 @@ do_action('woocommerce_before_cart'); ?>
         <i class="fa fa-hand-holding-dollar"></i>
         <div class="copy">
             <h5>Günstige Preise</h5>
-            <p>Lorem ipsum tekst, lorem ipsum</p>
+            <p>Bestellen Sie gleich Online und lassen sich die gewünschte Garagen Tor oder Fertiggarage direkt zu Ihnen nach Hause Liefern.</p>
         </div>
     </div>
     <div class="single">
         <i class="fa fa-tachometer"></i>
         <div class="copy">
             <h5>Schnelle Durchführung</h5>
-            <p>Lorem ipsum tekst, lorem ipsum</p>
+            <p>Gerne stellen wir ein individuelles auf Ihre wünsche ausgerichtetes Angebot inklusive Anlieferung her, bitte sprechen Sie uns an.</p>
         </div>
     </div>
     <div class="single">
         <i class="fa fa-info-circle"></i>
         <div class="copy">
             <h5>Breite Auswahl an Produkten</h5>
-            <p>Lorem ipsum tekst, lorem ipsum</p>
+            <p>Bei uns erhalten Sie qualitativ hochwertige: Garagentore nach maß, Garagen Zweiflügeltor günstig aus Polen, Zweiflügelige Garagentore mit Fenstern, Garagen-Nebentüren, Fertiggaragen aus Polen, Schwingtore ,Gartenhäuser.</p>
         </div>
     </div>
     <div class="single">
         <i class="fa fa-calendar"></i>
         <div class="copy">
             <h5>Mehrjährige Erfahrung</h5>
-            <p>Lorem ipsum tekst, lorem ipsum</p>
+            <p>Günstige Preise, Top Auswahl, Super Qualität, Schnelle Lieferung, Langjährige Erfahrung. Überzeugen Sie sich selber und sehen Sie sich unsere Referenzen an.</p>
         </div>
     </div>
     <div class="single">
         <i class="fa fa-truck-fast"></i>
         <div class="copy">
-            <h5>Schnelle Lieferung</h5>
-            <p>Wir garantieren eine schnelle Lieferung</p>
+            <h5>Lieferung</h5>
+            <p>Die Lieferzeit beträgt ca. 4 bis 10 Wochen, da jede unsere Fertiggarage und Garagentor nach Ihrem Angaben und Wünschen gefertigt wird.</p>
         </div>
     </div>
 </div>

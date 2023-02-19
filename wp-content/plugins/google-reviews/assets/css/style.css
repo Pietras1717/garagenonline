@@ -77,6 +77,15 @@
   justify-content: space-between;
 }
 
+#frmGoogleReviews input {
+  min-width: 300px;
+}
+
+#frmGoogleReviews:focus {
+  outline: none;
+  border: none;
+}
+
 .about-plugin {
   border: 1px solid black;
   border-radius: 5px;
@@ -127,15 +136,6 @@
 .greviews_save_changes:hover {
   background-color: white;
   color: black;
-}
-
-input {
-  min-width: 300px;
-}
-
-input:focus {
-  outline: none;
-  border: none;
 }
 
 .about-plugin div {

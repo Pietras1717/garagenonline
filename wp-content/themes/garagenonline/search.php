@@ -34,7 +34,7 @@ get_template_part('template-parts/page-header');
                                 <div class="info">
                                     <img class="avatar" src="https://pietras17.ct8.pl/wp-content/uploads/2023/01/cropped-favicon.webp" alt="Henryk Filipowicz" srcset="">
                                     <span class="author">Garagenonline</span>
-                                    <span class="data"><?php echo get_the_date('Y-m-d') ?></span>
+                                    <!-- <span class="data"><?php echo get_the_date('Y-m-d') ?></span> -->
                                 </div>
                             </div>
                         <?php endwhile ?>

@@ -18,7 +18,7 @@ get_template_part('template-parts/page-header');
 <?php if (get_field('referenzen_block') && get_field('referenzen_block')['aktywna_sekcja'] == "tak") : ?>
     <div class="referenzen">
         <div class="container">
-            <h2 class="referenzen-title">Read what customers says</h2>
+            <h2 class="referenzen-title">Lesen Sie, was Kunden sagen</h2>
             <div class="refenzes">
                 <?php $imgIndex = 0;
                 foreach (get_field('referenzen_block')['opinie_klientow'] as $single) : ?>
@@ -28,7 +28,7 @@ get_template_part('template-parts/page-header');
                             echo $single['opinia_klienta'];
                             ?>
                         </div>
-                        <h3>Zdjęcia z realizacji</h3>
+                        <h3>Fotos von der Umsetzung</h3>
                         <div class="images">
                             <?php
                             $images = $single['zdjecia_z_realizacji'];
@@ -42,7 +42,7 @@ get_template_part('template-parts/page-header');
                 endforeach;  ?>
             </div>
             <div class="loadmore">
-                <a href="#" id="loadMore">Load More</a>
+                <a href="#" id="loadMore">Mehr laden</a>
             </div>
         </div>
     </div>

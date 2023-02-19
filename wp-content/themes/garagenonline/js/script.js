@@ -78,7 +78,7 @@ jQuery("#loadMore").on("click", function (e) {
   e.preventDefault();
   jQuery(".single-referenze:hidden").slice(0, 4).slideDown();
   if (jQuery(".single-referenze:hidden").length == 0) {
-    jQuery("#loadMore").text("No more Content").addClass("noContent");
+    jQuery("#loadMore").text("Kein Inhalt mehr").addClass("noContent");
   }
 });
 
@@ -95,7 +95,12 @@ jQuery(function ($) {
   var $progress = jQuery(".wapf-progress");
   var currentStep = 1;
   $cart.hide();
-
+  //   window.dataLayer = window.dataLayer || [];
+  //   window.dataLayer.push({
+  //     event: "shop_steps",
+  //     page: window.location.pathname,
+  //     step: "1/" + maxSteps,
+  //   });
   for (var i = 1; i <= maxSteps; i++) {
     var $div = jQuery("<div>");
     if (i === 1) $div.addClass("active");
@@ -143,12 +148,22 @@ jQuery(function ($) {
   $prev.on("click", function (e) {
     currentStep--;
     post(e);
+    // window.dataLayer.push({
+    //   event: "shop_steps",
+    //   page: window.location.pathname,
+    //   step: currentStep + "/" + maxSteps,
+    // });
   });
 
   $next.on("click", function (e) {
     var valid = isValid();
     if (isValid()) {
       currentStep++;
+      //   window.dataLayer.push({
+      //     event: "shop_steps",
+      //     page: window.location.pathname,
+      //     step: currentStep + "/" + maxSteps,
+      //   });
       post(e);
     }
   });
@@ -184,23 +199,19 @@ jQuery(".wapf-field-input > img, .woocommerce-tabs  img").on(
 
 // scroll to top of section
 
-// jQuery(".wapf_btn_prev, .wapf_btn_next").on("click", function (e) {
-//   const firstElement = document
-//     .querySelector("div.wapf-section.field-63c0720c34f64.step")
-//     .classList.contains("stepActive");
-//   if (!firstElement) {
-//     jQuery("html").animate(
-//       {
-//         scrollTop: jQuery(".product_title").offset().top,
-//       },
-//       500 //speed
-//     );
-//   }
-// });
+ jQuery(".wapf_btn_prev, .wapf_btn_next").on("click", function (e) {
+   jQuery("html").animate(
+     {
+       scrollTop: jQuery(".product_title").offset().top,
+     },
+     500 //speed
+   );
+ });
 
 // change step in inputs
 
 jQuery("input[data-field-id]").attr("step", "0.01");
+jQuery('input[data-field-id="63d7e969f707a"], input[data-field-id="63ee391eabfd6"]').attr("step", "1");
 
 // jQuery(
 //   '[data-field-id="63c07268ec22a"], [data-field-id="63c072fea4fdf"], [data-field-id="63c1dca3b6284"], [data-field-id="63c1dca3b62e9"], [data-field-id="63c1ed80d8e04"], [data-field-id="63c1ed80d8e70"], [data-field-id="63c2692742883"], [data-field-id="63c26927428be"], [data-field-id="63c26e99e5568"], [data-field-id="63c26e99e557d"], [data-field-id="63c1e6a2dd739"], [data-field-id="63c1e6a2dd75d"], [data-field-id="63c1cb33652bf"], [data-field-id="63c1cb33652ec"]'

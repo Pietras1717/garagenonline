@@ -87,7 +87,7 @@ div.navbar
                 line-height: 40px
                 margin-left: 5px
                 border: none
-                background: $baseColor
+                background: #32CD32
                 color: white
                 font-weight: bold
                 transition: .3s
@@ -148,7 +148,7 @@ div.navbar
                         a
                             color: white
                     ul.sub-menu
-                        background-color: $baseColor
+                        background-color: white
                         display: none
                         transform: scaleY(0)
                         transition: .2s linear
@@ -163,13 +163,16 @@ div.navbar
                                 @media screen and ( min-width: 1024px )
                                     margin: 0
                                 a
+                                    display: block
                                     font-weight: normal
                                     font-size: 14px
                                     padding-left: 25px
+                                    text-transform: capitalize
+                                    color: black
+                                    span
+                                        text-transform: lowercase
                                 &:hover
-                                    background-color: white
-                                    a
-                                        color: black
+                                    background-color: #eee
             &.active
                 right: 0
         div.logo-wrapper
@@ -189,7 +192,7 @@ div.navbar
                 padding: 0 20px
                 background-color: white
                 margin: 0
-                z-index: 4
+                z-index: 1
                 @media screen and ( min-width: 1024px )
                     &.active
                         position: unset
